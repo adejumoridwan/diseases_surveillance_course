@@ -1,0 +1,450 @@
+---
+title: "Disease Surveillance & Outbreak Analytics with R"
+subtitle: "Day 1: Importing, Exploring & Cleaning Outbreak Data"
+author: "Your Name | Your Organization"
+date: "Saturday, 11 July 2026"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    footer: "Disease Surveillance with R — Day 1"
+    logo: ""
+    incremental: false
+    code-line-numbers: true
+    highlight-style: github
+    toc: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Welcome! {background-color="#1f3b57"}
+
+::: {style="color:white;"}
+**Disease Surveillance and Outbreak Analytics with R**
+
+Free launch course — hands-on, practical, beginner-friendly
+
+10:00 AM – 12:30 PM WAT, via Zoom
+:::
+
+---
+
+## Housekeeping
+
+- Session is **hands-on** — please have R & RStudio open and ready
+- Slides + code + data: link shared in the chat / follow-up email
+- Ask questions in the chat as we go; we'll pause for Q&A regularly
+- Camera/mic optional; this is a working session
+
+---
+
+## Who is this course for?
+
+- Public health professionals
+- Epidemiology workers and students
+- Disease surveillance officers
+- M&E officers and health data analysts
+- Researchers and postgraduate students
+- NGO and health program staff
+
+*No prior R experience assumed — we go step by step.*
+
+---
+
+## What you will take away today
+
+By the end of Day 1, you will be able to:
+
+1. Import a line-list dataset into R
+2. Do a first exploration of an unfamiliar dataset
+3. Clean messy real-world surveillance data:
+   - inconsistent text (sex, ward, outcome)
+   - messy/impossible ages
+   - dates in multiple formats
+   - duplicate records
+
+---
+
+## Today's scenario
+
+> A suspected **Acute Watery Diarrhoea (AWD)** outbreak has been reported
+> in **Ogun North LGA**. A raw line list has just arrived from the field
+> data collection tool. Before anyone can analyze it — it needs cleaning.
+
+We will use this *simulated* line list (`awd_linelist_raw.csv`)
+throughout the course.
+
+---
+
+## Course roadmap
+
+| Day | Focus |
+|---|---|
+| **Day 1 (today)** | R basics, import, explore, clean a line list |
+| **Day 2 (tomorrow)** | Descriptive tables, epidemic curves, outbreak measures |
+
+Course content adapted from **The Epidemiologist R Handbook**
+([epirhandbook.com](https://www.epirhandbook.com/en/)) — a free, open
+resource you should bookmark today.
+
+---
+
+# Part 1: R & RStudio Basics {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(10:00 – 10:25)
+:::
+
+---
+
+## What is R? What is RStudio?
+
+- **R**: the programming language/engine that does the calculations
+- **RStudio**: the friendly "cockpit" (IDE) we use to write and run R code
+- **Packages**: add-on toolkits (e.g. `tidyverse` for data wrangling,
+  `ggplot2` for graphs) — install once, load every session
+
+---
+
+## The RStudio layout
+
+- **Source** (top-left): where you write scripts (`.R` files)
+- **Console** (bottom-left): where code actually runs
+- **Environment** (top-right): objects you've created (data, values)
+- **Files/Plots/Packages/Help** (bottom-right)
+
+*Live demo: tour of RStudio*
+
+---
+
+## R Projects — start here every time
+
+```r
+# File > New Project > New Directory > New Project
+# Keep your script, data/, and outputs together in ONE folder
+```
+
+Using an **R Project** means your file paths (`"data/file.csv"`)
+work no matter whose computer you're on.
+
+---
+
+## Core building blocks
+
+```{r}
+# assigning values
+n_cases <- 353
+
+# a vector
+ages <- c(4, 17, 29, 5, 61)
+
+# a function
+mean(ages)
+
+# a data frame (like a spreadsheet)
+df <- data.frame(id = 1:3, age = c(4, 17, 29))
+```
+
+---
+
+## The pipe `%>%` (or `|>`)
+
+Reads as **"then"** — chains steps together instead of nesting functions.
+
+```{r}
+# Without pipe (hard to read)
+round(mean(ages), 1)
+
+# With pipe (reads top-to-bottom)
+ages %>%
+  mean() %>%
+  round(1)
+```
+
+We will use the pipe constantly today.
+
+---
+
+## Key packages for this course
+
+```{r}
+install.packages(c("tidyverse", "janitor", "lubridate",
+                    "here", "skimr"))
+
+library(tidyverse)  # dplyr, ggplot2, readr, stringr, tidyr
+library(janitor)    # clean_names(), tabyl(), get_dupes()
+library(lubridate)  # dates made easy
+library(skimr)      # quick data summaries
+```
+
+---
+
+# Part 2: Importing & Exploring Data {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(10:25 – 10:50) — Epi R Handbook Ch. 7 & 8
+:::
+
+---
+
+## Importing your line list
+
+```{r}
+library(tidyverse)
+
+linelist_raw <- read_csv("data/awd_linelist_raw.csv")
+```
+
+`read_csv()` (from `readr`) is faster and more predictable than
+base R's `read.csv()`, and prints a helpful column-type summary.
+
+---
+
+## First look at any new dataset
+
+```{r}
+dim(linelist_raw)        # rows x columns
+glimpse(linelist_raw)    # compact view of every column
+head(linelist_raw)       # first 6 rows
+```
+
+```{r}
+library(skimr)
+skim(linelist_raw)       # full summary: missingness, ranges, etc.
+```
+
+::: {.callout-note}
+**Habit to build:** never analyze a dataset you haven't looked at first.
+:::
+
+---
+
+## 🖥️ Hands-on Exercise 1 (10 min)
+
+1. Import `data/awd_linelist_raw.csv`
+2. Run `glimpse()` and `skim()`
+3. In the chat, tell us: how many rows? Which column has the most
+   missing values?
+
+---
+
+# Part 3: Cleaning the Line List {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(10:50 – 11:55) — Epi R Handbook Ch. 8, 9, 10, 15
+:::
+
+---
+
+## Why real surveillance data is messy
+
+- Multiple data collectors → inconsistent spelling/casing
+- Manual date entry → mixed formats
+- Weak network / re-submission → duplicate records
+- Skipped fields → missing values
+- Fat-finger errors → impossible values (age = 150)
+
+**Cleaning is not optional — it *is* the analysis.**
+
+---
+
+## Step 1: Clean column names
+
+```{r}
+library(janitor)
+
+linelist <- linelist_raw %>%
+  clean_names()
+
+names(linelist)
+```
+
+`clean_names()` turns `"Sex "`, `" Ward"`, `"date of report"` into
+tidy `snake_case` names: `sex`, `ward`, `date_of_report`.
+
+---
+
+## Step 2: Find & remove duplicates
+
+```{r}
+get_dupes(linelist)              # inspect exact duplicates
+linelist <- linelist %>% distinct()
+```
+
+**Near-duplicates** (e.g. `"AWD-0043"` vs `"AWD-0043b"`) need a rule:
+
+```{r}
+linelist <- linelist %>%
+  mutate(case_id = str_remove(case_id, "[a-z]$")) %>%
+  distinct(case_id, .keep_all = TRUE)
+```
+
+---
+
+## Step 3: Clean categorical variables
+
+```{r}
+tabyl(linelist, sex)   # ALWAYS inspect before cleaning
+```
+
+```{r}
+linelist <- linelist %>%
+  mutate(sex = case_when(
+    str_to_upper(str_trim(sex)) %in% c("M", "MALE")   ~ "Male",
+    str_to_upper(str_trim(sex)) %in% c("F", "FEMALE") ~ "Female",
+    TRUE ~ NA_character_
+  ))
+```
+
+`case_when()` is your best friend for recoding messy categories.
+
+---
+
+## Step 3 (continued): ward names
+
+```{r}
+tabyl(linelist, ward)
+```
+
+```{r}
+linelist <- linelist %>%
+  mutate(
+    ward = str_trim(ward),
+    ward = str_to_title(ward),
+    ward = recode(ward,
+                  "Iwo Rd"  = "Iwo Road",
+                  "Ring Rd" = "Ring Road")
+  )
+```
+
+**Pattern:** trim whitespace → standardize case → fix known typos.
+
+---
+
+## 🖥️ Hands-on Exercise 2 (15 min)
+
+Using the same pattern, clean:
+
+1. `hospitalized` → should only contain `"Yes"` / `"No"`
+2. `outcome` → should only contain `"Recovered"` / `"Died"` / `NA`
+
+*Hint: use `tabyl()` first to see what you're dealing with, then
+`case_when()`.*
+
+(Solutions in `R/day1_import_and_cleaning.R`)
+
+---
+
+## Step 4: Clean numeric variables (age)
+
+```{r}
+summary(linelist$age)     # spot the impossible max!
+```
+
+```{r}
+linelist <- linelist %>%
+  mutate(age = if_else(age < 0 | age > 100, NA_real_, age))
+```
+
+Then create age groups for later analysis:
+
+```{r}
+linelist <- linelist %>%
+  mutate(age_group = cut(age,
+    breaks = c(0, 5, 15, 30, 45, 60, Inf),
+    labels = c("0-4","5-14","15-29","30-44","45-59","60+"),
+    right = FALSE))
+```
+
+---
+
+## Step 5: Clean dates — the tricky part
+
+Our data has THREE date formats mixed together:
+
+- `2026-05-03`  (ISO: year-month-day)
+- `03/05/2026`  (day/month/year)
+- `03-May-2026` (day-month abbreviation-year)
+
+```{r}
+library(lubridate)
+
+linelist <- linelist %>%
+  mutate(date_onset = parse_date_time(
+    date_onset, orders = c("ymd", "dmy", "mdy"), quiet = TRUE
+  ) %>% as_date())
+```
+
+---
+
+## ⚠️ A word of caution on dates
+
+`11/05/2026` is genuinely ambiguous: is that 11 May or 5 November?
+
+- Always **ask your data source** which format was used
+- Where possible, request ISO format (`YYYY-MM-DD`) at collection stage
+- After parsing, always **sanity-check the range** of resulting dates
+
+```{r}
+range(linelist$date_onset, na.rm = TRUE)
+```
+
+---
+
+## Step 5 (continued): validate & fix dates
+
+```{r}
+linelist <- linelist %>%
+  filter(!is.na(date_onset),
+         date_onset >= as_date("2026-01-01"),
+         date_onset <= as_date("2026-07-04")) %>%
+  mutate(
+    date_of_report = if_else(
+      date_of_report < date_onset | is.na(date_of_report),
+      date_onset, date_of_report),
+    reporting_delay = as.numeric(date_of_report - date_onset)
+  )
+```
+
+---
+
+## 🖥️ Hands-on Exercise 3 (15 min)
+
+1. Apply the date-cleaning code to `date_of_report`
+2. Calculate `reporting_delay` (in days)
+3. Find: what is the **maximum** reporting delay in the dataset?
+   Is that concerning for surveillance timeliness?
+
+---
+
+## Save your cleaned dataset
+
+```{r}
+write_csv(linelist, "data/awd_linelist_clean_inclass.csv")
+```
+
+**Bring this file to Day 2!** We'll use it to build epidemic curves
+and calculate outbreak measures.
+
+---
+
+## Recap: Day 1
+
+✅ R & RStudio basics, the pipe
+✅ Importing and first-look exploration
+✅ Cleaning: column names, duplicates, categories, numbers, dates
+✅ A clean, analysis-ready line list
+
+**Tomorrow:** turn this clean data into epidemic curves, tables, and
+outbreak measures (attack rate, CFR).
+
+---
+
+## Questions? {background-color="#1f3b57"}
+
+::: {style="color:white;"}
+See you tomorrow!
+
+Sunday, 12 July 2026, 1:30 – 3:30 PM WAT
+:::

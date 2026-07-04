@@ -1,0 +1,363 @@
+---
+title: "Disease Surveillance & Outbreak Analytics with R"
+subtitle: "Day 2: Epidemic Curves, Tables & Outbreak Measures"
+author: "Your Name | Your Organization"
+date: "Sunday, 12 July 2026"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    footer: "Disease Surveillance with R — Day 2"
+    code-line-numbers: true
+    highlight-style: github
+    toc: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Welcome back! {background-color="#1f3b57"}
+
+::: {style="color:white;"}
+**Day 2: From clean data to outbreak insights**
+
+1:30 – 3:30 PM WAT
+:::
+
+---
+
+## Quick recap of Day 1
+
+- We imported a messy AWD line list
+- Cleaned column names, duplicates, categories, ages, dates
+- Saved: `data/awd_linelist_clean_inclass.csv`
+
+Today we answer the questions a surveillance team actually needs:
+**Who is affected? Where? When? How severe?**
+
+---
+
+## What you will take away today
+
+1. Descriptive tables (age, sex, ward breakdowns)
+2. Epidemic curves — the single most important outbreak graphic
+3. Key outbreak measures: **attack rate**, **case fatality ratio**
+4. A simple trend line (moving average)
+5. A one-page surveillance summary
+
+---
+
+## Setup: load your data
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(lubridate)
+
+linelist <- read_csv("data/awd_linelist_clean_inclass.csv")
+population <- read_csv("data/ward_population.csv")
+
+# didn't finish Day 1? use the answer key instead:
+# linelist <- read_csv("data/awd_linelist_clean.csv")
+```
+
+---
+
+# Part 1: Descriptive Tables {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(1:30 – 1:55) — Epi R Handbook Ch. 17
+:::
+
+---
+
+## `tabyl()` — quick frequency tables
+
+```{r}
+tabyl(linelist, sex) %>%
+  adorn_pct_formatting(digits = 1)
+```
+
+```{r}
+tabyl(linelist, ward) %>%
+  arrange(desc(n))
+```
+
+Simple, readable, presentation-ready with one extra line of code.
+
+---
+
+## Cross-tabulations
+
+```{r}
+linelist %>%
+  tabyl(age_group, sex) %>%
+  adorn_totals(c("row", "col")) %>%
+  adorn_percentages("row") %>%
+  adorn_pct_formatting(digits = 1) %>%
+  adorn_ns()
+```
+
+Answers: *"What proportion of each age group is male vs female?"*
+
+---
+
+## 🖥️ Hands-on Exercise 1 (10 min)
+
+1. Produce a table of `outcome` by `hospitalized`
+2. In the chat: which group has a higher proportion of deaths —
+   hospitalized or not?
+
+---
+
+# Part 2: Epidemic Curves {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(1:55 – 2:30) — Epi R Handbook Ch. 32
+:::
+
+---
+
+## Why the epicurve matters
+
+The epidemic curve is usually the **first graphic** shown in any
+outbreak report or sitrep. It tells you at a glance:
+
+- Is the outbreak growing, peaking, or declining?
+- Is transmission a single point-source or ongoing/propagated?
+- Roughly when did exposure/transmission occur?
+
+---
+
+## A basic epicurve
+
+```{r}
+ggplot(linelist, aes(x = date_onset)) +
+  geom_histogram(binwidth = 1, fill = "steelblue", colour = "white") +
+  labs(title = "Epidemic Curve: Suspected AWD Cases",
+       x = "Date of onset", y = "Number of cases") +
+  theme_minimal()
+```
+
+*Live demo — build this together*
+
+---
+
+## A weekly epicurve, by outcome
+
+```{r}
+linelist <- linelist %>%
+  mutate(epiweek = floor_date(date_onset, "week", week_start = 1))
+
+ggplot(linelist, aes(x = epiweek, fill = outcome)) +
+  geom_bar(colour = "white") +
+  scale_fill_manual(values = c("Recovered" = "seagreen",
+                                "Died" = "firebrick")) +
+  labs(title = "Weekly Cases by Outcome",
+       x = "Week of onset", y = "Cases") +
+  theme_minimal()
+```
+
+---
+
+## Faceting: one panel per ward
+
+```{r}
+ggplot(linelist, aes(x = epiweek)) +
+  geom_bar(fill = "darkorange") +
+  facet_wrap(~ ward) +
+  labs(title = "Weekly Cases by Ward") +
+  theme_minimal()
+```
+
+Facets let you spot **where transmission is still active** — very
+useful for targeting a response.
+
+---
+
+## 🖥️ Hands-on Exercise 2 (15 min)
+
+1. Build the weekly epicurve by outcome
+2. Change the fill colours to your own choice
+3. Facet it by `sex` instead of `ward` — what do you notice?
+
+---
+
+# Part 3: Key Outbreak Measures {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(2:30 – 3:00) — core outbreak epidemiology
+:::
+
+---
+
+## Attack Rate
+
+$$
+\text{Attack Rate} = \frac{\text{New cases in a period}}{\text{Population at risk}} \times 10{,}000
+$$
+
+```{r}
+attack_rate <- linelist %>%
+  count(ward, name = "cases") %>%
+  left_join(population, by = "ward") %>%
+  mutate(attack_rate_per_10000 =
+           round(cases / population * 10000, 1)) %>%
+  arrange(desc(attack_rate_per_10000))
+
+attack_rate
+```
+
+---
+
+## Visualizing attack rate by ward
+
+```{r}
+ggplot(attack_rate,
+       aes(x = reorder(ward, attack_rate_per_10000),
+           y = attack_rate_per_10000)) +
+  geom_col(fill = "tomato") +
+  coord_flip() +
+  labs(title = "Attack Rate by Ward",
+       x = NULL, y = "Cases per 10,000 population") +
+  theme_minimal()
+```
+
+This immediately tells the response team **where to focus**.
+
+---
+
+## Case Fatality Ratio (CFR)
+
+$$
+\text{CFR} = \frac{\text{Deaths}}{\text{Cases with known outcome}} \times 100
+$$
+
+```{r}
+linelist %>%
+  filter(!is.na(outcome)) %>%
+  summarise(
+    n = n(),
+    deaths = sum(outcome == "Died"),
+    cfr_percent = round(deaths / n * 100, 2)
+  )
+```
+
+::: {.callout-note}
+Always report the **denominator** (cases with *known* outcome) —
+don't silently drop missing outcomes without saying so.
+:::
+
+---
+
+## Other quick indicators
+
+```{r}
+# % hospitalized
+linelist %>%
+  filter(!is.na(hospitalized)) %>%
+  summarise(pct_hosp = round(mean(hospitalized == "Yes") * 100, 1))
+
+# reporting timeliness
+linelist %>%
+  summarise(median_delay = median(reporting_delay, na.rm = TRUE),
+            max_delay = max(reporting_delay, na.rm = TRUE))
+```
+
+Timeliness indicators matter as much as clinical ones — a slow
+system can't respond to a fast outbreak.
+
+---
+
+## 🖥️ Hands-on Exercise 3 (10 min)
+
+1. Calculate the **overall** attack rate for the whole LGA
+   (hint: sum all cases, sum all ward populations)
+2. Compare it to the highest single-ward attack rate
+
+---
+
+## A simple trend: 7-day moving average
+
+```{r}
+daily_cases <- linelist %>%
+  count(date_onset, name = "cases") %>%
+  complete(date_onset = seq.Date(min(date_onset), max(date_onset), "day"),
+           fill = list(cases = 0)) %>%
+  mutate(ma7 = zoo::rollmean(cases, 7, fill = NA, align = "right"))
+
+ggplot(daily_cases, aes(date_onset)) +
+  geom_col(aes(y = cases), fill = "grey80") +
+  geom_line(aes(y = ma7), colour = "darkblue", linewidth = 1) +
+  theme_minimal()
+```
+
+Smooths day-to-day noise so you can see the underlying trend.
+
+---
+
+# Part 4: Putting It Together {background-color="#2e5e4e"}
+
+::: {style="color:white;"}
+(3:00 – 3:20)
+:::
+
+---
+
+## A one-page surveillance summary
+
+```{r}
+tibble(
+  Indicator = c("Total cases", "Wards affected",
+                "Overall attack rate /10,000", "CFR (%)",
+                "% Hospitalized", "Median reporting delay (days)"),
+  Value = c(nrow(linelist), n_distinct(linelist$ward),
+            17.4, 2.1, 34.8, 2)   # <- replace with your calculated values
+)
+```
+
+This table + epicurve + attack-rate chart = the core of any
+outbreak **situation report (sitrep)**.
+
+---
+
+## Beyond today: automating reports
+
+What we did manually today (import → clean → analyze → visualize)
+can be **automated** with R Markdown / Quarto reports that
+regenerate themselves every time new data arrives.
+
+*(Covered in depth in our full training program.)*
+
+---
+
+## Where to go next
+
+- Explore **The Epidemiologist R Handbook**: [epirhandbook.com](https://www.epirhandbook.com/en/)
+  - Ch. 8–15: Data management & cleaning
+  - Ch. 17–23: Analysis (tables, regression, time series)
+  - Ch. 30–39: Visualization
+  - Ch. 40–43: Automated reports & dashboards
+- Practice with **your own** surveillance/line-list data
+- Join our **upcoming full training program** (details to follow)
+
+---
+
+## Recap: What we covered
+
+✅ Day 1: Import, explore, clean a messy line list
+✅ Day 2: Descriptive tables, epidemic curves, outbreak measures,
+a simple trend, and a summary output
+
+**You now have a repeatable workflow you can apply to real
+surveillance data in your own work.**
+
+---
+
+## Thank you! {background-color="#1f3b57"}
+
+::: {style="color:white;"}
+Questions & discussion
+
+Details on the full training program coming soon
+:::

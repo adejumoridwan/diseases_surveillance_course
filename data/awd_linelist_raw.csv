@@ -1,0 +1,354 @@
+Case ID,Name,Age,Sex , Ward,Date_Onset,date of report,Hospitalized?,RDT Result,Outcome,Source of Water
+AWD-0220,Femi Yusuf ,146.0,F,sango,03-Jun-2026,06/06/2026,1,POSITIVE,RECOVERED,RIVER
+AWD-0043, Kemi Balogun,20.0,f,APATA,11/05/2026,14-May-2026,yes,negative,recovered,Borehole
+AWD-0212, Nkechi Balogun,4.0,F,bodija,05/25/2026,25/05/2026,YES,POSITIVE,RECOVERED,river
+AWD-0194,KUNLE YUSUF,7.0,f,Ring Road,28/05/2026,30-May-2026,1,Negative,recovered,WELL
+AWD-0057,Segun Okafor ,11.0,Female,BODIJA,13/05/2026,2026-05-17,No,POSITIVE,recovered,borehole
+AWD-0180,Funke Okafor,13.0,f,Agodi ,2026-05-31,06/03/2026,0,positive,RECOVERED,Well
+AWD-0016, Zainab Adeyemi,10.0,FEMALE,Ring Road ,05-May-2026,05/07/2026,Y,NEGATIVE,recovered,RIVER
+AWD-0058,Nkechi Adewale,12.0,MALE,Iwo Road ,05/14/2026,18-May-2026,no,Negative,alive,well
+AWD-0140,Segun Eze,128.0,f,Bodija,27-May-2026,2026-05-30,No,POSITIVE,RECOVERED,borehole
+AWD-0149, Ijeoma Adewale,10.0,MALE,Sango ,31-May-2026,06/04/2026,yes,Positive,RECOVERED,PIPE-BORNE WATER
+AWD-0095, Emeka Mohammed,,FEMALE,sango,2026-05-22,27-May-2026,YES,positive,RECOVERED,Sachet water
+AWD-0091,BLESSING OGUNDELE,30.0,m,Sango ,2026-05-21,05/24/2026,NO,negative,recovered,BOREHOLE
+AWD-0127,Ibrahim Uzoma ,15.0,f,Iwo Road,20-May-2026,2026-05-23,YES,Positive,RECOVERED,sachet water
+AWD-0209,Yemi Nwosu ,14.0,Male,Bodija ,2026-05-26,05/30/2026,0,positive,Recovered,SACHET WATER
+AWD-0117,Emeka Abubakar,28.0,m,IWO ROAD,2026-05-23,23/05/2026,n,Negative,,river
+AWD-0156,ADE OKAFOR,7.0,Male,Apata,05/31/2026,04-Jun-2026,yes,Positive,recovered,borehole
+AWD-0079,ADE ADEWALE,1.0,male,Iwo rd,18-May-2026,20/05/2026,YES,PENDING,recovered,Sachet water
+AWD-0330,DANLADI NNAMDI,26.0,F,bodija,24-Jun-2026,2026-06-24,1,Pending,recovered,SACHET WATER
+AWD-0138,GRACE UZOMA,25.0,male,sango,05/23/2026,05/24/2026,n,positive,Recovered,well
+AWD-0272,Nkechi Fashola ,5.0,f,apata,2026-06-12,14/06/2026,Y,Negative,Recovered,Pipe-borne water
+AWD-0146,MUSA YUSUF,3.0,male, Iwo Road,30-May-2026,02/06/2026,1,NEGATIVE,Recovered,BOREHOLE
+AWD-0243, Chidinma Nnamdi,18.0,Female, Bodija,2026-06-07,01/01/1999,y,NEGATIVE,recovered,BOREHOLE
+AWD-0284,SADE BALOGUN,18.0,Male,iwo road,2026-06-10,12/06/2026,NO,Positive,Recovered,PIPE-BORNE WATER
+AWD-0034, Yemi Chukwu,25.0,male, Apata,05/14/2026,2026-05-15,No,NEGATIVE,Recovered,Sachet water
+AWD-0158, Ibrahim Ogundele,5.0,Male,Sango,2026-05-25,28/05/2026,Yes,POSITIVE,Died,SACHET WATER
+AWD-0085,Yemi Ogundele,10.0,male,Agodi,2026-05-18,2026-05-23,N,positive,RECOVERED,Borehole
+AWD-0120, Rita Bello,28.0,m,ring road,2026-05-23,2026-05-28,NO,Negative,ALIVE,sachet water
+AWD-0319,Grace Mohammed,,f,Iwo Road ,2026-06-19,06/20/2026,1,Positive,recovered,PIPE-BORNE WATER
+AWD-0026,Uche Okon ,6.0,F,Ring rd,2026-05-08,09/05/2026,Y,NEGATIVE,RECOVERED,SACHET WATER
+AWD-0074,Ade Chukwu ,12.0,,Iwo rd,21-May-2026,21-May-2026,N,POSITIVE,Alive,RIVER
+AWD-0133,Grace Afolabi,28.0,female,Bodija,2026-05-20,2026-05-22,1,positive,,Sachet water
+AWD-0010,Danladi Balogun ,6.0,female,APATA,05/06/2026,05/06/2026,n,POSITIVE,recovered,well
+AWD-0115, Uche Uzoma,14.0,FEMALE, Apata,24-May-2026,05/27/2026,yes,positive,RECOVERED,Well
+AWD-0141, Chidinma Nwosu,1.0,Male,Iwo rd,2026-05-27,2026-05-29,No,negative,recovered,river
+AWD-0111, Yemi Obi,17.0,FEMALE,RING ROAD,05/18/2026,2026-05-18,y,negative,RECOVERED,SACHET WATER
+AWD-0040,Ngozi Uzoma ,16.0,m,AGODI,05/12/2026,13-May-2026,No,Positive,RECOVERED,Pipe-borne water
+AWD-0023,UCHE OKAFOR,13.0,female,SANGO,09-May-2026,05/14/2026,no,Positive,recovered,SACHET WATER
+AWD-0181,MUSA ADEYEMI,36.0,Male,Agodi,27/05/2026,2026-05-27,YES,Positive,RECOVERED,sachet water
+AWD-0094,Uche Nwosu,7.0,male,Ring Road,05/22/2026,05/27/2026,Y,negative,died,sachet water
+AWD-0159,Blessing Uzoma ,12.0,m, Iwo Road,25-May-2026,29-May-2026,N,Negative,RECOVERED,BOREHOLE
+AWD-0177, Chidinma Nwosu,24.0,F,BODIJA,28-May-2026,2026-06-02,No,POSITIVE,recovered,well
+AWD-0031,Danladi Mohammed,20.0,male,bodija,05/15/2026,05/17/2026,,Positive,Recovered,WELL
+AWD-0301,FEMI YUSUF,13.0,,Ring rd,06/08/2026,06/13/2026,1,Negative,ALIVE,RIVER
+AWD-0298,Yemi Okafor,4.0,M,Sango ,2026-06-08,2026-06-11,Y,positive,recovered,BOREHOLE
+AWD-0119,ADE FASHOLA,12.0,MALE,ring road,2026-05-18,05/23/2026,n,positive,RECOVERED,SACHET WATER
+AWD-0303,Uche Suleiman,15.0,f,BODIJA,06/17/2026,2026-06-18,1,Negative,Recovered,WELL
+AWD-0056,Aisha Bello,52.0,F,Agodi ,2026-05-15,05/20/2026,Y,NEGATIVE,ALIVE,Borehole
+AWD-0006,TUNDE BELLO,6.0,female,ring road,2026-04-30,2026-05-03,y,pending,RECOVERED,well
+AWD-0046,Funke Obi,19.0,Male,ring road,05/15/2026,2026-05-18,NO,NEGATIVE,Unknown,WELL
+AWD-0226,Segun Eze ,4.0,,SANGO,2026-06-05,06-Jun-2026,no,NEGATIVE,recovered,RIVER
+AWD-0275,CHI OBI,12.0,F,SANGO,14-Jun-2026,2026-06-18,No,PENDING,RECOVERED,BOREHOLE
+AWD-0266, Chi Eze,30.0,,bodija,,2026-06-11,N,Positive,Recovered,WELL
+AWD-0233,FUNKE SULEIMAN,23.0,M,IWO ROAD,2026-06-03,05-Jun-2026,1,Negative,RECOVERED,Borehole
+AWD-0078,Aisha Chukwu ,12.0,MALE,Apata,2026-05-24,25-May-2026,no,negative,Recovered,borehole
+AWD-0327,RITA NNAMDI,24.0,Male, Iwo Road,25/06/2026,28/06/2026,N,POSITIVE,ALIVE,well
+AWD-0199,ADE OKON,6.0,F, Apata,30-May-2026,03/06/2026,no,positive,RECOVERED,PIPE-BORNE WATER
+AWD-0004,SADE OKON,28.0,FEMALE,iwo road,05/01/2026,2026-05-03,NO,PENDING,recovered,borehole
+AWD-0114,WALE YUSUF,40.0,Male,sango,22-May-2026,05/23/2026,0,positive,Recovered,Pipe-borne water
+AWD-0076,AISHA EZE,28.0,F,Iwo Road,21-May-2026,05/21/2026,Yes,Negative,Died,SACHET WATER
+AWD-0318,Femi Balogun ,17.0,MALE,Sango ,16-Jun-2026,16/06/2026,N,POSITIVE,RECOVERED,Pipe-borne water
+AWD-0064,Aisha Garba ,13.0,FEMALE,Sango,17/05/2026,19/05/2026,Yes,NEGATIVE,recovered,Sachet water
+AWD-0047,Rita Ogundele,12.0,Male,sango,16/05/2026,20-May-2026,N,positive,alive,Well
+AWD-0238,Blessing Ogundele ,9.0,MALE,sango,02/06/2026,06/06/2026,yes,Positive,Recovered,BOREHOLE
+AWD-0077,KABIRU BELLO,16.0,MALE,sango,2026-05-20,22-May-2026,1,NEGATIVE,RECOVERED,sachet water
+AWD-0073,Chi Mohammed ,999.0,F,Agodi ,23-May-2026,05/26/2026,no,Positive,Recovered,well
+AWD-0286,Rita Bello ,23.0,m,Sango ,06/08/2026,2026-06-12,1,positive,alive,Well
+AWD-0268,Funke Nnamdi,10.0,female,Sango ,06/07/2026,10/06/2026,NO,negative,Recovered,BOREHOLE
+AWD-0195,GRACE ABUBAKAR,,F,Ring rd,05/30/2026,06/03/2026,,positive,Died,sachet water
+AWD-0168, Peter Obi,11.0,M,Bodija,25/05/2026,2026-05-27,0,NEGATIVE,RECOVERED,Sachet water
+AWD-0332,TUNDE EZE,18.0,M,APATA,2026-06-29,2026-07-03,No,Positive,Recovered,Borehole
+AWD-0210,Yemi Chukwu,142.0,f, Apata,2026-05-30,2026-06-03,0,Positive,RECOVERED,BOREHOLE
+AWD-0102,Emeka Nwosu ,6.0,f,BODIJA,22/05/2026,22/05/2026,Yes,Positive,recovered,RIVER
+AWD-0203,Chidinma Balogun ,21.0,female,RING ROAD,28/05/2026,01-Jun-2026,N,NEGATIVE,recovered,sachet water
+AWD-0330,DANLADI NNAMDI,26.0,F,bodija,24-Jun-2026,2026-06-24,1,Pending,recovered,SACHET WATER
+AWD-0182,Funke Abubakar ,31.0,MALE,Iwo Road,31/05/2026,01-Jun-2026,Yes,negative,Recovered,Sachet water
+AWD-0083,Wale Abubakar,30.0,Female,Sango,20-May-2026,05/23/2026,YES,POSITIVE,Recovered,borehole
+AWD-0336,Segun Ogundele ,50.0,M,IWO ROAD,06/29/2026,2026-07-03,N,positive,alive,SACHET WATER
+AWD-0017, Sade Suleiman,11.0,MALE,Apata,10-May-2026,2026-05-10,N,POSITIVE,Recovered,well
+AWD-0067,Kemi Balogun,31.0,male,Iwo rd,2026-05-14,05/14/2026,Y,Pending,Alive,BOREHOLE
+AWD-0184,Kunle Yusuf,1.0,FEMALE,ring road,26-May-2026,05/31/2026,n,negative,DIED,Sachet water
+AWD-0008,KABIRU YUSUF,42.0,FEMALE,Iwo Road,2026-04-29,2026-04-30,N,NEGATIVE,RECOVERED,Pipe-borne water
+AWD-0110,Femi Afolabi,4.0,F,APATA,05/21/2026,25/05/2026,YES,positive,ALIVE,well
+AWD-0125,Kemi Nwosu,11.0,male,Bodija ,23/05/2026,23/05/2026,y,NEGATIVE,alive,borehole
+AWD-0231,Bola Okon,34.0,Male,sango,2026-06-03,06/04/2026,,Pending,ALIVE,PIPE-BORNE WATER
+AWD-0310,Nkechi Balogun ,16.0,MALE,Sango ,06/19/2026,06/23/2026,no,POSITIVE,recovered,well
+AWD-0161,Zainab Nwosu ,9.0,f,apata,2026-05-31,2026-06-04,1,POSITIVE,Recovered,river
+AWD-0333,TUNDE FASHOLA,21.0,f,ring road,2026-07-02,05/07/2026,y,negative,Died,RIVER
+AWD-0083b,Wale Abubakar,30.0,Female,Sango,20-May-2026,05/23/2026,YES,POSITIVE,Recovered,borehole
+AWD-0308,Ngozi Nwosu ,5.0,F,SANGO,2026-06-16,06/21/2026,N,pending,ALIVE,Borehole
+AWD-0061,Ijeoma Okafor,13.0,MALE,Apata,2026-05-17,05/20/2026,no,Positive,Recovered,river
+AWD-0263,WALE NNAMDI,19.0,m,iwo road,07/06/2026,09-Jun-2026,1,POSITIVE,recovered,well
+AWD-0282,WALE ABUBAKAR,5.0,f,iwo road,12/06/2026,15-Jun-2026,No,negative,Recovered,WELL
+AWD-0247,Tunde Uzoma ,120.0,male,agodi,2026-06-06,2026-06-06,no,negative,recovered,BOREHOLE
+AWD-0254,Grace Chukwu,48.0,Female, Bodija,05/06/2026,10-Jun-2026,No,NEGATIVE,recovered,Borehole
+AWD-0279,Rita Uzoma ,28.0,F,BODIJA,06/12/2026,2026-06-14,Yes,Positive,Recovered,well
+AWD-0018,Bola Yusuf,20.0,m,apata,08-May-2026,2026-05-13,no,Positive,RECOVERED,Pipe-borne water
+AWD-0148,Danladi Obi ,20.0,female,agodi,2026-05-31,02/06/2026,No,Positive,recovered,borehole
+AWD-0025,Ijeoma Yusuf,23.0,male,Sango,2026-05-05,07/05/2026,n,Negative,Recovered,Borehole
+AWD-0311, Danladi Mohammed,5.0,F, Bodija,06/16/2026,16/06/2026,NO,POSITIVE,RECOVERED,BOREHOLE
+AWD-0115, Uche Uzoma,14.0,FEMALE, Apata,24-May-2026,05/27/2026,yes,positive,RECOVERED,Well
+AWD-0204,Amaka Bello,16.0,FEMALE,Sango ,2026-05-25,05/30/2026,no,Negative,RECOVERED,river
+AWD-0154,NGOZI NNAMDI,1.0,male,Sango ,26-May-2026,2026-05-29,1,PENDING,Alive,WELL
+AWD-0221,TUNDE FASHOLA,17.0,MALE, Bodija,01-Jun-2026,04/06/2026,no,POSITIVE,recovered,River
+AWD-0307b,GRACE FASHOLA,32.0,Male,Apata,16/06/2026,19-Jun-2026,N,POSITIVE,Recovered,River
+AWD-0262,Zainab Balogun,28.0,Male,ring road,06/07/2026,2026-06-09,NO,Negative,recovered,SACHET WATER
+AWD-0109,Musa Okon ,4.0,f,Iwo Road,05/23/2026,05/27/2026,no,positive,Alive,BOREHOLE
+AWD-0267,Wale Adeyemi,26.0,F,Ring Road ,06/04/2026,08-Jun-2026,,Pending,recovered,WELL
+AWD-0164,Bola Okon,21.0,f,Iwo Road,29-May-2026,02/06/2026,0,PENDING,alive,Sachet water
+AWD-0153, Grace Mohammed,13.0,F,apata,05/27/2026,2026-05-27,no,Positive,RECOVERED,well
+AWD-0020,Kabiru Abubakar,20.0,MALE,Sango,2026-05-06,08-May-2026,yes,Pending,Recovered,sachet water
+AWD-0224, Peter Garba,9.0,,Sango,03/06/2026,06/04/2026,yes,POSITIVE,RECOVERED,well
+AWD-0080,EMEKA ABUBAKAR,38.0,m,Ring Road ,05/20/2026,05/20/2026,Y,POSITIVE,RECOVERED,well
+AWD-0066,Danladi Suleiman ,6.0,m,AGODI,2026-05-16,05/21/2026,0,PENDING,RECOVERED,sachet water
+AWD-0019,Danladi Nwosu,47.0,Female,Sango,04/05/2026,05/05/2026,yes,pending,RECOVERED,RIVER
+AWD-0250, Ijeoma Nwosu,33.0,FEMALE,SANGO,03/06/2026,2026-06-04,Yes,negative,Alive,WELL
+AWD-0105, Aisha Afolabi,8.0,FEMALE,Iwo Road ,20/05/2026,05/25/2026,no,NEGATIVE,ALIVE,river
+AWD-0312,BLESSING EZE,8.0,f,iwo road,06/15/2026,2026-06-15,1,negative,Alive,Borehole
+AWD-0032,Grace Chukwu,30.0,Female,Sango ,,17/05/2026,0,Positive,Alive,pipe-borne water
+AWD-0037,MUSA GARBA,29.0,Female,Ring rd,12-May-2026,16/05/2026,no,positive,RECOVERED,Borehole
+AWD-0183,Kemi Nwosu ,-6.0,female, Bodija,05/26/2026,2026-05-27,Yes,positive,RECOVERED,pipe-borne water
+AWD-0248,Nkechi Nnamdi ,32.0,f,IWO ROAD,03/06/2026,2026-06-08,yes,POSITIVE,RECOVERED,Well
+AWD-0297,Peter Balogun,24.0,m, Apata,12/06/2026,17/06/2026,0,NEGATIVE,RECOVERED,river
+AWD-0245,ZAINAB CHUKWU,1.0,female,sango,06/06/2026,06/07/2026,y,POSITIVE,RECOVERED,Well
+AWD-0166,NKECHI EZE,25.0,m,Bodija ,2026-05-28,28/05/2026,0,Positive,alive,river
+AWD-0313, Sade Okafor,10.0,Female,Ring Road,2026-06-16,19-Jun-2026,No,Positive,Recovered,Sachet water
+AWD-0060,Rita Obi ,5.0,M, Apata,13-May-2026,18-May-2026,yes,Pending,RECOVERED,BOREHOLE
+AWD-0225,IBRAHIM FASHOLA,11.0,female, Iwo Road,2026-06-04,04-Jun-2026,NO,Positive,recovered,Sachet water
+AWD-0251,Zainab Eze ,68.0,m,Bodija,06/01/2026,2026-06-03,no,negative,recovered,well
+AWD-0112,Aisha Ogundele ,3.0,f,AGODI,2026-05-22,27/05/2026,no,negative,recovered,Borehole
+AWD-0337,SEGUN MOHAMMED,22.0,FEMALE,Sango ,2026-07-03,08-Jul-2026,y,Negative,alive,PIPE-BORNE WATER
+AWD-0007,Ade Nwosu,10.0,Male,apata,2026-04-27,27/04/2026,NO,Positive,recovered,WELL
+AWD-0257,SEGUN BELLO,5.0,m,Sango,06/02/2026,2026-06-03,no,positive,Recovered,WELL
+AWD-0235,Musa Eze ,9.0,M,Bodija,,07/06/2026,1,positive,alive,sachet water
+AWD-0011,Peter Bello,,Female,Ring rd,05/09/2026,14-May-2026,NO,PENDING,Alive,Well
+AWD-0293,Bola Fashola,19.0,f, Bodija,08-Jun-2026,2026-06-11,N,negative,Recovered,borehole
+AWD-0255,Ibrahim Bello ,45.0,F, Bodija,06/03/2026,03-Jun-2026,NO,Positive,Recovered,Sachet water
+AWD-0082,Wale Adeyemi,38.0,F,IWO ROAD,22-May-2026,27-May-2026,Y,negative,Recovered,WELL
+AWD-0174,BOLA GARBA,19.0,MALE, Iwo Road,05/28/2026,01-Jun-2026,n,NEGATIVE,Recovered,BOREHOLE
+AWD-0200,KEMI BELLO,12.0,Male,Apata,05/29/2026,05/31/2026,0,POSITIVE,Alive,sachet water
+AWD-0176,FEMI GARBA,-21.0,FEMALE,bodija,2026-05-29,06/01/2026,NO,POSITIVE,ALIVE,RIVER
+AWD-0232,Tunde Okon,16.0,male,Sango ,01-Jun-2026,06/04/2026,No,POSITIVE,ALIVE,river
+AWD-0328,Kabiru Garba ,9.0,f,Sango,27-Jun-2026,02-Jul-2026,y,positive,recovered,BOREHOLE
+AWD-0296, Amaka Abubakar,3.0,male,IWO ROAD,10/06/2026,2026-06-12,NO,Pending,recovered,borehole
+AWD-0093,Kemi Nwosu ,14.0,male,Sango ,05/21/2026,05/25/2026,,positive,RECOVERED,Borehole
+AWD-0070,MUSA MOHAMMED,40.0,F, Apata,13/05/2026,16/05/2026,no,negative,recovered,BOREHOLE
+AWD-0234,Rita Abubakar ,22.0,female,apata,06/01/2026,06/06/2026,No,POSITIVE,Recovered,River
+AWD-0097, Funke Chukwu,53.0,Female,SANGO,05/19/2026,05/22/2026,no,Positive,Recovered,sachet water
+AWD-0144,TOYIN ADEWALE,6.0,F,Sango ,2026-05-27,2026-05-27,No,Positive,RECOVERED,BOREHOLE
+AWD-0291,GRACE ABUBAKAR,15.0,FEMALE,Bodija,2026-06-09,13-Jun-2026,Y,Positive,alive,sachet water
+AWD-0098, Amaka Abubakar,14.0,F,Ring Road ,23/05/2026,2026-05-28,Y,Positive,RECOVERED,BOREHOLE
+AWD-0334,TUNDE OBI,36.0,FEMALE,Sango,05/07/2026,09-Jul-2026,NO,PENDING,RECOVERED,borehole
+AWD-0069,Ngozi Nwosu ,12.0,, Iwo Road,05/12/2026,15/05/2026,No,Positive,Recovered,borehole
+AWD-0024,BOLA GARBA,47.0,Male,ring road,10/05/2026,11-May-2026,No,positive,ALIVE,Borehole
+AWD-0038,Aisha Fashola ,10.0,M,iwo road,2026-05-12,12-May-2026,No,NEGATIVE,alive,borehole
+AWD-0145,KABIRU OBI,8.0,f,IWO ROAD,26-May-2026,29-May-2026,0,Positive,died,Borehole
+AWD-0123,BOLA ADEWALE,7.0,male,iwo road,05/23/2026,2026-05-25,n,NEGATIVE,recovered,WELL
+AWD-0068,Kabiru Ogundele,7.0,m,bodija,15/05/2026,2026-05-19,NO,Negative,RECOVERED,WELL
+AWD-0283,PETER ABUBAKAR,16.0,Female,AGODI,11-Jun-2026,2026-06-12,no,POSITIVE,ALIVE,well
+AWD-0186, Bola Nnamdi,8.0,f,Iwo Road ,31/05/2026,2026-06-05,YES,Negative,recovered,BOREHOLE
+AWD-0126, Uche Bello,14.0,male,Apata,2026-05-21,2026-05-23,Yes,positive,Alive,borehole
+AWD-0147,Chidinma Okon,22.0,Male,Iwo Road,28/05/2026,2026-05-28,0,negative,recovered,River
+AWD-0197, Chidinma Chukwu,45.0,f,SANGO,31-May-2026,,,Positive,recovered,RIVER
+AWD-0087,Musa Balogun,14.0,MALE,Iwo Road,2026-05-18,20-May-2026,n,Negative,Alive,Pipe-borne water
+AWD-0299,Amaka Mohammed,26.0,Male,iwo road,13-Jun-2026,2026-06-14,N,POSITIVE,ALIVE,Borehole
+AWD-0173,NGOZI OGUNDELE,5.0,Male,Iwo Road ,05/31/2026,2026-05-31,y,PENDING,Recovered,WELL
+AWD-0300, Wale Ogundele,37.0,male,Sango ,09-Jun-2026,09-Jun-2026,n,Pending,recovered,SACHET WATER
+AWD-0169,UCHE OBI,,male,Agodi,2026-05-27,05/27/2026,YES,Negative,Recovered,SACHET WATER
+AWD-0269,Amaka Mohammed ,129.0,Male,Bodija ,08/06/2026,11-Jun-2026,n,negative,RECOVERED,river
+AWD-0223,Tunde Suleiman,,MALE,Iwo rd,2026-06-05,05-Jun-2026,no,positive,recovered,well
+AWD-0249,Wale Mohammed,7.0,MALE,Ring Road,07/06/2026,08/06/2026,No,Negative,recovered,sachet water
+AWD-0178, Chi Eze,6.0,F,Iwo Road ,28/05/2026,06/01/2026,YES,POSITIVE,Alive,river
+AWD-0246,Uche Garba,28.0,male,apata,06/03/2026,2026-06-08,NO,negative,Alive,Pipe-borne water
+AWD-0130, Musa Bello,46.0,F,Iwo Road ,2026-05-24,2026-05-25,0,Negative,recovered,Pipe-borne water
+AWD-0039,Aisha Nwosu,12.0,,bodija,05/12/2026,2026-05-17,Y,negative,Alive,borehole
+AWD-0012,IJEOMA NWOSU,13.0,f,sango,09/05/2026,09/05/2026,YES,Positive,recovered,well
+AWD-0229,BOLA ADEYEMI,20.0,F,Agodi ,04-Jun-2026,2026-06-05,Y,positive,Recovered,SACHET WATER
+AWD-0281,BOLA AFOLABI,18.0,f,Sango ,12/06/2026,06/15/2026,y,positive,recovered,river
+AWD-0113, Toyin Garba,11.0,M,bodija,23-May-2026,23-May-2026,y,Positive,recovered,Well
+AWD-0228,Amaka Ogundele ,5.0,female,BODIJA,2026-06-01,06/03/2026,N,PENDING,recovered,borehole
+AWD-0329,YEMI GARBA,13.0,F,BODIJA,2026-06-23,23/06/2026,N,NEGATIVE,ALIVE,well
+AWD-0118,Sade Adeyemi ,35.0,female,Iwo Road,05/18/2026,2026-05-19,YES,Pending,RECOVERED,Well
+AWD-0326,Ibrahim Uzoma ,10.0,M,Sango ,,2026-06-28,0,NEGATIVE,RECOVERED,SACHET WATER
+AWD-0305,Uche Chukwu ,,Female,Iwo Road,06/15/2026,2026-06-17,no,positive,recovered,PIPE-BORNE WATER
+AWD-0256, Funke Nnamdi,6.0,FEMALE,Ring Road,06/06/2026,10/06/2026,n,NEGATIVE,recovered,SACHET WATER
+AWD-0320,Danladi Okon ,10.0,f,SANGO,20/06/2026,2026-06-21,NO,pending,recovered,WELL
+AWD-0165,Uche Balogun,2.0,m,Ring Road,05/25/2026,26-May-2026,Yes,Pending,RECOVERED,Borehole
+AWD-0211,Musa Garba,2.0,m,iwo road,27-May-2026,05/30/2026,Y,positive,RECOVERED,Sachet water
+AWD-0239,Zainab Garba ,10.0,m,agodi,06/07/2026,2026-06-09,,Positive,recovered,borehole
+AWD-0155, Ibrahim Abubakar,15.0,Female,sango,25/05/2026,27-May-2026,1,PENDING,recovered,Well
+AWD-0241,WALE ABUBAKAR,21.0,female,bodija,2026-06-07,2026-06-09,N,POSITIVE,recovered,Sachet water
+AWD-0003,Aisha Fashola,34.0,FEMALE,SANGO,27-Apr-2026,29/04/2026,Yes,POSITIVE,ALIVE,River
+AWD-0116,NGOZI GARBA,5.0,m,Ring Road,2026-05-20,20-May-2026,NO,Pending,alive,river
+AWD-0196,Nkechi Abubakar,9.0,M,SANGO,31-May-2026,,YES,PENDING,recovered,sachet water
+AWD-0198,Chidinma Mohammed,17.0,,Apata,05/26/2026,05/31/2026,no,positive,RECOVERED,WELL
+AWD-0240,Uche Chukwu,,FEMALE,Iwo rd,2026-06-04,05/06/2026,yes,POSITIVE,RECOVERED,SACHET WATER
+AWD-0121,Segun Yusuf ,144.0,MALE,Sango,24/05/2026,24-May-2026,YES,Negative,alive,SACHET WATER
+AWD-0273,Kunle Ogundele,13.0,F,SANGO,2026-06-12,2026-06-16,1,POSITIVE,ALIVE,SACHET WATER
+AWD-0292,Zainab Balogun ,28.0,m,sango,06/09/2026,11/06/2026,No,NEGATIVE,ALIVE,WELL
+AWD-0306, Kunle Mohammed,32.0,female,Sango ,19-Jun-2026,22-Jun-2026,N,Positive,Recovered,Sachet water
+AWD-0128, Aisha Okon,32.0,female, Bodija,2026-05-18,19-May-2026,yes,Positive,recovered,River
+AWD-0075,Kunle Afolabi,28.0,f,iwo road,22-May-2026,26-May-2026,n,Positive,recovered,SACHET WATER
+AWD-0287,KUNLE NWOSU,4.0,Female,bodija,08-Jun-2026,13/06/2026,0,NEGATIVE,RECOVERED,RIVER
+AWD-0030,BOLA OKON,18.0,FEMALE,AGODI,05/07/2026,05/07/2026,NO,Positive,RECOVERED,sachet water
+AWD-0084,SEGUN OBI,18.0,m,Sango,2026-05-20,21/05/2026,Yes,Positive,Recovered,sachet water
+AWD-0335, Kabiru Uzoma,,M,Agodi ,2026-07-03,03-Jul-2026,NO,positive,Died,River
+AWD-0108,Funke Okon ,13.0,MALE,agodi,21-May-2026,21-May-2026,No,NEGATIVE,Recovered,River
+AWD-0285,Funke Balogun,13.0,M,Bodija,08/06/2026,08/06/2026,0,positive,Recovered,sachet water
+AWD-0289,Sade Nnamdi ,5.0,Male, Iwo Road,06/10/2026,14/06/2026,N,POSITIVE,alive,well
+AWD-0134,Kunle Ogundele ,5.0,m,Iwo rd,05/18/2026,21-May-2026,1,POSITIVE,RECOVERED,RIVER
+AWD-0185,Ibrahim Garba ,14.0,FEMALE,Sango ,2026-05-26,27/05/2026,NO,positive,Recovered,BOREHOLE
+AWD-0259, Musa Nwosu,6.0,F,bodija,2026-06-03,,No,negative,alive,WELL
+AWD-0045,Femi Adewale ,20.0,female,ring road,05/12/2026,2026-05-16,N,positive,alive,BOREHOLE
+AWD-0325,KUNLE SULEIMAN,999.0,FEMALE, Iwo Road,2026-06-23,06/27/2026,Yes,POSITIVE,alive,SACHET WATER
+AWD-0066,Danladi Suleiman ,6.0,m,AGODI,2026-05-16,05/21/2026,0,PENDING,RECOVERED,sachet water
+AWD-0305,Uche Chukwu ,,Female,Iwo Road,06/15/2026,2026-06-17,no,positive,recovered,PIPE-BORNE WATER
+AWD-0086,Kemi Obi ,16.0,F, Apata,19/05/2026,05/24/2026,yes,Positive,RECOVERED,river
+AWD-0187,Femi Mohammed ,40.0,M,Iwo Road,05/26/2026,05/27/2026,N,Positive,RECOVERED,RIVER
+AWD-0071,Peter Fashola ,36.0,M,Ring Road,2026-05-14,16-May-2026,n,Positive,Recovered,WELL
+AWD-0160,Zainab Eze ,7.0,m,SANGO,27/05/2026,2026-05-28,,Positive,Recovered,Well
+AWD-0013, Femi Garba,999.0,female,Sango,2026-05-08,2026-05-13,yes,positive,recovered,SACHET WATER
+AWD-0036,IJEOMA EZE,12.0,FEMALE,RING ROAD,13/05/2026,16-May-2026,Yes,negative,RECOVERED,Pipe-borne water
+AWD-0029, Ijeoma Nwosu,53.0,,Sango ,05/04/2026,08/05/2026,no,Positive,alive,Borehole
+AWD-0171,Aisha Okon,11.0,,AGODI,30-May-2026,31-May-2026,n,NEGATIVE,recovered,Borehole
+AWD-0143,Yemi Ogundele ,3.0,female,apata,29/05/2026,06/01/2026,0,POSITIVE,ALIVE,RIVER
+AWD-0151,GRACE OGUNDELE,,male,Sango,31/05/2026,04/06/2026,1,NEGATIVE,Recovered,borehole
+AWD-0222,Grace Okon ,8.0,MALE,BODIJA,2026-06-05,06/06/2026,n,positive,recovered,well
+AWD-0132,KEMI SULEIMAN,15.0,female,APATA,24/05/2026,25/05/2026,N,Positive,Alive,RIVER
+AWD-0230, Emeka Nnamdi,,FEMALE,Sango ,06/02/2026,06/05/2026,No,Positive,RECOVERED,Borehole
+AWD-0052, Kabiru Okafor,,male,Bodija ,2026-05-13,05/18/2026,No,positive,recovered,Sachet water
+AWD-0096,BOLA YUSUF,13.0,female,bodija,2026-05-19,05/20/2026,No,Negative,ALIVE,Borehole
+AWD-0290, Chidinma Balogun,34.0,f,apata,14-Jun-2026,14-Jun-2026,Yes,Positive,Alive,borehole
+AWD-0179,Uche Ogundele ,,Female,IWO ROAD,2026-05-29,06/01/2026,y,positive,recovered,RIVER
+AWD-0205,Amaka Abubakar,1.0,M,agodi,2026-05-30,03-Jun-2026,No,NEGATIVE,recovered,sachet water
+AWD-0124,Chi Adeyemi,16.0,Male,Ring rd,2026-05-20,2026-05-20,1,NEGATIVE,RECOVERED,WELL
+AWD-0042, Blessing Uzoma,,FEMALE, Bodija,05/14/2026,18-May-2026,No,positive,recovered,SACHET WATER
+AWD-0090,Zainab Adeyemi,5.0,F,Iwo Road ,2026-05-19,05/22/2026,yes,POSITIVE,recovered,Borehole
+AWD-0276,Uche Okon ,22.0,Male,Agodi,2026-06-13,06/17/2026,NO,POSITIVE,recovered,well
+AWD-0207,EMEKA NWOSU,20.0,Male,SANGO,25-May-2026,2026-05-25,yes,Positive,alive,River
+AWD-0137,ZAINAB FASHOLA,6.0,m,Agodi,2026-05-22,05/24/2026,yes,Negative,recovered,Sachet water
+AWD-0027,Bola Fashola ,-8.0,F,SANGO,2026-05-08,12-May-2026,0,POSITIVE,Recovered,River
+AWD-0299,Amaka Mohammed,26.0,Male,iwo road,13-Jun-2026,2026-06-14,N,POSITIVE,ALIVE,Borehole
+AWD-0142, Ijeoma Nwosu,10.0,f,Iwo rd,28/05/2026,2026-05-31,y,negative,RECOVERED,WELL
+AWD-0295,GRACE NWOSU,16.0,F, Apata,06/12/2026,06/14/2026,n,positive,recovered,Borehole
+AWD-0005,Amaka Ogundele ,17.0,f,sango,2026-04-29,2026-05-03,n,Positive,recovered,WELL
+AWD-0001,FEMI OGUNDELE,7.0,F,RING ROAD,05/02/2026,05/02/2026,,pending,ALIVE,BOREHOLE
+AWD-0317,Funke Fashola ,36.0,FEMALE,ring road,15/06/2026,06/17/2026,N,POSITIVE,Recovered,Pipe-borne water
+AWD-0303,Uche Suleiman,15.0,f,BODIJA,06/17/2026,2026-06-18,1,Negative,Recovered,WELL
+AWD-0321, Yemi Chukwu,21.0,f,Iwo Road ,2026-06-21,2026-06-24,no,POSITIVE,Recovered,RIVER
+AWD-0101,Rita Okafor ,9.0,M, Iwo Road,21/05/2026,2026-05-21,0,negative,RECOVERED,Sachet water
+AWD-0227, Aisha Okon,5.0,female,bodija,06-Jun-2026,2026-06-08,N,positive,RECOVERED,River
+AWD-0193,Rita Okon,3.0,male,APATA,25-May-2026,2026-05-28,yes,POSITIVE,recovered,SACHET WATER
+AWD-0304,Uche Ogundele,8.0,MALE,BODIJA,06/17/2026,2026-06-22,0,Negative,RECOVERED,SACHET WATER
+AWD-0219,Bola Okafor,22.0,Male,Apata,2026-06-07,06/10/2026,NO,Negative,Recovered,Sachet water
+AWD-0214, Kemi Okafor,23.0,m,IWO ROAD,05-Jun-2026,06/05/2026,0,positive,RECOVERED,borehole
+AWD-0104,Kabiru Abubakar ,23.0,F,Ring Road,20/05/2026,21/05/2026,yes,negative,RECOVERED,Sachet water
+AWD-0172, Femi Obi,18.0,F, Apata,05/29/2026,01-Jun-2026,N,Negative,RECOVERED,PIPE-BORNE WATER
+AWD-0099,Ibrahim Adewale,13.0,female,Sango ,,27-May-2026,n,Positive,recovered,borehole
+AWD-0216,Chidinma Suleiman,42.0,FEMALE, Apata,06/06/2026,2026-06-08,yes,Positive,Recovered,well
+AWD-0062, Aisha Abubakar,36.0,f, Iwo Road,12/05/2026,16-May-2026,No,Positive,RECOVERED,River
+AWD-0048,Danladi Ogundele ,24.0,F,APATA,05/11/2026,14/05/2026,N,negative,Recovered,Sachet water
+AWD-0033,Chidinma Balogun ,7.0,female,RING ROAD,15/05/2026,05/16/2026,NO,Negative,recovered,Pipe-borne water
+AWD-0201,ZAINAB ADEYEMI,5.0,male,apata,30/05/2026,03/06/2026,n,NEGATIVE,RECOVERED,Sachet water
+AWD-0315,Ade Fashola ,11.0,f,Agodi,16/06/2026,21-Jun-2026,yes,pending,recovered,SACHET WATER
+AWD-0028,Sade Obi ,18.0,Female,Iwo Road,2026-05-09,2026-05-13,y,NEGATIVE,Alive,BOREHOLE
+AWD-0278,Kemi Abubakar,9.0,female,iwo road,10-Jun-2026,2026-06-15,N,POSITIVE,Recovered,BOREHOLE
+AWD-0231,Bola Okon,34.0,Male,sango,2026-06-03,06/04/2026,,Pending,ALIVE,PIPE-BORNE WATER
+AWD-0261,Danladi Nwosu ,140.0,MALE,sango,06/02/2026,06-Jun-2026,1,PENDING,ALIVE,River
+AWD-0163,Sade Obi,5.0,,APATA,2026-05-25,2026-05-25,Y,Positive,Unknown,well
+AWD-0302,Toyin Bello ,43.0,F,apata,14-Jun-2026,2026-06-17,N,POSITIVE,RECOVERED,Borehole
+AWD-0139,Rita Fashola ,13.0,,Ring Road,23-May-2026,05/25/2026,Yes,Negative,RECOVERED,well
+AWD-0063,Chidinma Uzoma,3.0,male, Apata,05/17/2026,05/22/2026,YES,NEGATIVE,recovered,sachet water
+AWD-0136, Nkechi Eze,19.0,FEMALE,iwo road,20/05/2026,21/05/2026,no,POSITIVE,Unknown,well
+AWD-0129,Chidinma Nnamdi,17.0,M,APATA,19-May-2026,19/05/2026,yes,NEGATIVE,recovered,Borehole
+AWD-0009,Femi Nwosu ,6.0,female,Sango ,08-May-2026,10-May-2026,No,POSITIVE,Recovered,sachet water
+AWD-0065,AISHA AFOLABI,39.0,FEMALE,Agodi,17/05/2026,18-May-2026,1,Positive,RECOVERED,sachet water
+AWD-0015,Bola Chukwu ,9.0,female,AGODI,09/05/2026,2026-05-11,N,Positive,Recovered,Well
+AWD-0157,Aisha Abubakar,18.0,FEMALE,Iwo Road ,05/26/2026,05/28/2026,NO,pending,RECOVERED,Pipe-borne water
+AWD-0041,Funke Nnamdi ,30.0,f,Sango,2026-05-16,2026-05-16,NO,positive,recovered,SACHET WATER
+AWD-0324,Musa Suleiman ,12.0,M,sango,2026-06-25,25/06/2026,n,PENDING,unknown,RIVER
+AWD-0288, Musa Suleiman,,FEMALE,sango,10-Jun-2026,06/10/2026,yes,Negative,Recovered,Sachet water
+AWD-0217,KEMI NWOSU,18.0,female,Iwo rd,06/03/2026,2026-06-07,No,negative,Alive,BOREHOLE
+AWD-0280,Aisha Nnamdi ,29.0,Female,RING ROAD,,06/12/2026,no,POSITIVE,recovered,Borehole
+AWD-0316,Peter Garba,22.0,F,Bodija,17/06/2026,,,Negative,recovered,BOREHOLE
+AWD-0237, Chi Eze,12.0,FEMALE,APATA,06/03/2026,2026-06-06,1,Pending,RECOVERED,SACHET WATER
+AWD-0208,Toyin Yusuf ,21.0,f,IWO ROAD,27/05/2026,2026-05-30,y,positive,Recovered,RIVER
+AWD-0213,Amaka Uzoma,14.0,MALE,ring road,05/26/2026,31-May-2026,N,Positive,Recovered,pipe-borne water
+AWD-0322, Toyin Nwosu,14.0,F,Agodi ,2026-06-25,2026-06-29,no,Pending,ALIVE,WELL
+AWD-0252, Toyin Eze,6.0,Female,ring road,01/06/2026,06/06/2026,Y,negative,alive,Borehole
+AWD-0335, Kabiru Uzoma,,M,Agodi ,2026-07-03,03-Jul-2026,NO,positive,Died,River
+AWD-0323, Bola Nnamdi,18.0,,apata,23/06/2026,2026-06-28,Y,Positive,recovered,Sachet water
+AWD-0270,Bola Obi,20.0,Male,apata,09-Jun-2026,11/06/2026,n,Pending,Recovered,BOREHOLE
+AWD-0202,Sade Mohammed ,26.0,Male,Agodi,2026-05-30,30/05/2026,No,Positive,recovered,Borehole
+AWD-0162,BLESSING NNAMDI,19.0,FEMALE,Iwo Road,05/26/2026,29/05/2026,NO,Negative,RECOVERED,well
+AWD-0044, Tunde Afolabi,25.0,M,Agodi,14/05/2026,2026-05-16,n,Pending,RECOVERED,Pipe-borne water
+AWD-0218,Ade Abubakar ,22.0,Male,SANGO,05/06/2026,06/06/2026,N,Pending,Recovered,BOREHOLE
+AWD-0191,NGOZI FASHOLA,40.0,,Sango ,05/25/2026,30-May-2026,Yes,positive,Recovered,Well
+AWD-0260,WALE OBI,30.0,f,Iwo Road,06/04/2026,06/08/2026,0,Negative,ALIVE,SACHET WATER
+AWD-0106,UCHE BALOGUN,19.0,FEMALE,apata,20-May-2026,05/24/2026,0,POSITIVE,recovered,borehole
+AWD-0054, Funke Obi,9.0,F,Ring Road,12-May-2026,14-May-2026,N,PENDING,recovered,pipe-borne water
+AWD-0002,Kabiru Nwosu ,8.0,FEMALE,Bodija ,28/04/2026,02/05/2026,NO,POSITIVE,RECOVERED,Borehole
+AWD-0050,YEMI OGUNDELE,56.0,FEMALE,Iwo Road,14-May-2026,2026-05-14,N,Negative,RECOVERED,SACHET WATER
+AWD-0081, Ijeoma Suleiman,11.0,m,sango,20/05/2026,24-May-2026,N,NEGATIVE,RECOVERED,sachet water
+AWD-0206,Ngozi Nwosu,10.0,f,apata,29/05/2026,05/29/2026,NO,positive,recovered,borehole
+AWD-0035,Chidinma Abubakar,28.0,Female,AGODI,05/14/2026,05/14/2026,yes,positive,UNK,SACHET WATER
+AWD-0264,Musa Okon,1.0,MALE,Sango,06/05/2026,2026-06-09,Y,Positive,recovered,pipe-borne water
+AWD-0092, Funke Eze,23.0,Male,Iwo Road ,2026-05-21,24/05/2026,NO,positive,recovered,PIPE-BORNE WATER
+AWD-0053,Toyin Chukwu ,35.0,FEMALE,Iwo Road,2026-05-12,13/05/2026,no,Negative,ALIVE,borehole
+AWD-0265,Sade Uzoma,7.0,FEMALE,Bodija,06/04/2026,06/05/2026,n,Positive,Recovered,Borehole
+AWD-0242,Rita Nwosu,30.0,Male,ring road,06/05/2026,05/06/2026,no,positive,Recovered,Well
+AWD-0014, Blessing Obi,999.0,Female, Iwo Road,10-May-2026,10-May-2026,N,negative,RECOVERED,Well
+AWD-0089,Toyin Fashola,5.0,m,Sango,05/20/2026,05/24/2026,NO,positive,recovered,pipe-borne water
+AWD-0274,Tunde Adewale ,8.0,Female,Bodija ,13-Jun-2026,06/13/2026,No,Pending,,BOREHOLE
+AWD-0167,UCHE NNAMDI,,FEMALE,Ring Road ,25-May-2026,28-May-2026,No,positive,RECOVERED,Sachet water
+AWD-0123,BOLA ADEWALE,7.0,male,iwo road,05/23/2026,2026-05-25,n,NEGATIVE,recovered,WELL
+AWD-0135, Aisha Afolabi,8.0,female,apata,2026-05-19,22-May-2026,yes,positive,alive,borehole
+AWD-0307,GRACE FASHOLA,32.0,Male,Apata,16/06/2026,19-Jun-2026,N,POSITIVE,Recovered,River
+AWD-0130, Musa Bello,46.0,F,Iwo Road ,2026-05-24,2026-05-25,0,Negative,recovered,Pipe-borne water
+AWD-0244,UCHE FASHOLA,24.0,Male,sango,2026-06-07,06/12/2026,y,PENDING,ALIVE,Borehole
+AWD-0055, Kemi Obi,28.0,FEMALE,APATA,14-May-2026,18-May-2026,0,Positive,recovered,River
+AWD-0051,Funke Afolabi,20.0,F,AGODI,17-May-2026,18/05/2026,N,Negative,Recovered,River
+AWD-0175, Ade Suleiman,28.0,Female,SANGO,28-May-2026,30/05/2026,N,Positive,Recovered,borehole
+AWD-0190,DANLADI YUSUF,5.0,male,IWO ROAD,29-May-2026,,YES,Negative,Recovered,WELL
+AWD-0258b, Femi Fashola,18.0,female,BODIJA,04/06/2026,2026-06-07,0,NEGATIVE,recovered,WELL
+AWD-0188,Sade Fashola,23.0,male,iwo road,30/05/2026,04/06/2026,NO,Pending,recovered,pipe-borne water
+AWD-0170,UCHE NWOSU,22.0,FEMALE,Bodija,25-May-2026,30-May-2026,0,positive,RECOVERED,River
+AWD-0059,BLESSING SULEIMAN,10.0,MALE, Apata,05/15/2026,18/05/2026,y,PENDING,recovered,BOREHOLE
+AWD-0049,PETER NNAMDI,17.0,F,SANGO,14-May-2026,05/18/2026,Y,positive,Recovered,Well
+AWD-0236,Peter Eze,145.0,F,Bodija ,04/06/2026,2026-06-08,Y,positive,alive,Borehole
+AWD-0253,Ijeoma Balogun ,17.0,Female,agodi,04/06/2026,06-Jun-2026,y,negative,UNK,SACHET WATER
+AWD-0022, Yemi Suleiman,20.0,,bodija,05/10/2026,2026-05-14,Y,NEGATIVE,ALIVE,PIPE-BORNE WATER
+AWD-0314,Uche Nnamdi ,11.0,f,sango,20/06/2026,06/24/2026,Y,Negative,Alive,borehole
+AWD-0161,Zainab Nwosu ,9.0,f,apata,2026-05-31,2026-06-04,1,POSITIVE,Recovered,river
+AWD-0277,Tunde Mohammed ,24.0,M,bodija,06/14/2026,14-Jun-2026,yes,negative,RECOVERED,Pipe-borne water
+AWD-0192,Nkechi Nwosu ,19.0,male,Sango ,,30/05/2026,,Negative,RECOVERED,borehole
+AWD-0294,NGOZI MOHAMMED,50.0,f,RING ROAD,2026-06-08,06/13/2026,Y,Positive,RECOVERED,BOREHOLE
+AWD-0258, Femi Fashola,18.0,female,BODIJA,04/06/2026,2026-06-07,0,NEGATIVE,recovered,WELL
+AWD-0309, Toyin Adeyemi,22.0,f,Sango,06/19/2026,21/06/2026,No,POSITIVE,Recovered,River
+AWD-0150,Funke Bello ,48.0,M,Ring rd,31/05/2026,31-May-2026,No,NEGATIVE,RECOVERED,Well
+AWD-0131,Zainab Suleiman,5.0,FEMALE,Iwo Road,21-May-2026,23-May-2026,N,negative,ALIVE,SACHET WATER
+AWD-0152,CHI ADEWALE,29.0,f,BODIJA,,05/29/2026,Yes,Negative,RECOVERED,sachet water
+AWD-0100, Musa Chukwu,9.0,f,sango,05/21/2026,21-May-2026,1,NEGATIVE,recovered,WELL
+AWD-0088,IBRAHIM GARBA,10.0,MALE,SANGO,2026-05-22,25-May-2026,N,POSITIVE,alive,Sachet water
+AWD-0331, Sade Bello,34.0,Female,iwo road,22-Jun-2026,06/26/2026,N,NEGATIVE,Recovered,RIVER
+AWD-0215,CHIDINMA NNAMDI,27.0,FEMALE,Sango,2026-06-05,09-Jun-2026,n,Positive,Recovered,SACHET WATER
+AWD-0122,DANLADI NWOSU,27.0,Female,Iwo Road,05/21/2026,2026-05-24,No,Pending,recovered,borehole
+AWD-0015b,Bola Chukwu ,9.0,female,AGODI,09/05/2026,2026-05-11,N,Positive,Recovered,Well
+AWD-0021, Zainab Okon,30.0,,apata,05/05/2026,2026-05-05,0,Negative,recovered,borehole
+AWD-0189, Bola Garba,10.0,f, Iwo Road,29-May-2026,2026-06-01,no,Positive,RECOVERED,borehole
+AWD-0072,Kunle Garba ,68.0,Female,Sango,2026-13-45,29/05/2026,,pending,Recovered,BOREHOLE
+AWD-0107, Amaka Okafor,,male,apata,05/23/2026,27/05/2026,,POSITIVE,Recovered,BOREHOLE
+AWD-0271,YEMI OGUNDELE,5.0,f,Bodija ,11/06/2026,14-Jun-2026,N,Positive,alive,Borehole
+AWD-0237, Chi Eze,12.0,FEMALE,APATA,06/03/2026,2026-06-06,1,Pending,RECOVERED,SACHET WATER
+AWD-0103, Musa Okafor,22.0,female,Agodi,18-May-2026,21/05/2026,0,PENDING,Alive,WELL
