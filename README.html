@@ -354,17 +354,9 @@ display: none;
 
 <div id="disease-surveillance-and-outbreak-analytics-with-r" class="section level1">
 <h1>Disease Surveillance and Outbreak Analytics with R</h1>
-<div id="free-weekend-launch-course-instructor-pack" class="section level3">
-<h3>Free Weekend Launch Course — Instructor Pack</h3>
-<p>Content adapted from <strong>The Epidemiologist R Handbook</strong>
-(epirhandbook.com), used under its CC BY-NC-SA 4.0 license for
-academic/training purposes. Consider emailing the Applied Epi team (per
-the handbook’s terms) to let them know you’re using their material for
-this course.</p>
 <hr />
-</div>
-<div id="whats-in-this-pack" class="section level2">
-<h2>1. What’s in this pack</h2>
+<div id="directory-structure" class="section level2">
+<h2>1. Directory Structure</h2>
 <pre><code>course/
 ├── README.md                          &lt;- this file
 ├── slides/
@@ -374,12 +366,12 @@ this course.</p>
 │   ├── day1_import_and_cleaning.R     &lt;- full Day 1 hands-on script
 │   └── day2_visualization_and_measures.R &lt;- full Day 2 hands-on script
 └── data/
-    ├── awd_linelist_raw.csv           &lt;- MESSY data (hand out at start of Day 1)
-    ├── awd_linelist_clean.csv         &lt;- CLEAN answer key (instructor use / stragglers)
+    ├── awd_linelist_raw.csv           &lt;- MESSY data
+    ├── awd_linelist_clean.csv         &lt;- CLEAN data
     └── ward_population.csv            &lt;- population denominators for attack rates</code></pre>
 </div>
-<div id="the-scenario-used-throughout" class="section level2">
-<h2>2. The scenario used throughout</h2>
+<div id="scenario" class="section level2">
+<h2>2. Scenario</h2>
 <p>A simulated outbreak of <strong>Acute Watery Diarrhoea (AWD)</strong>
 in a fictional <strong>“Ogun North” LGA</strong>, Nigeria, spanning 10
 weeks (late April–early July 2026) across 6 wards (Iwo Road, Bodija,
@@ -388,11 +380,9 @@ into 353 messy rows for the cleaning exercise (duplicates, typos, mixed
 date formats, impossible ages, inconsistent Yes/No and category coding).
 This mirrors the kinds of problems trainees will meet in real line-list
 data.</p>
-<p>All data is <strong>entirely synthetic</strong> — safe to
-redistribute to trainees.</p>
 </div>
-<div id="setup-instructions-send-to-participants-beforehand" class="section level2">
-<h2>3. Setup instructions (send to participants beforehand)</h2>
+<div id="setup-instructions" class="section level2">
+<h2>3. Setup instructions</h2>
 <ol style="list-style-type: decimal">
 <li><p>Install <strong>R</strong> (≥ 4.2): <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
 <li><p>Install <strong>RStudio Desktop</strong>: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p></li>
@@ -417,184 +407,6 @@ quarto render slides/day2_slides.qmd</code></pre>
 <code>.html</code> slideshow (press <code>F</code> for fullscreen,
 <code>S</code> for speaker notes view, <code>?</code> for all keyboard
 shortcuts).</p>
-<p>Each code chunk is set to <code>eval: false</code> so slides render
-instantly without needing the data at render time — you will <strong>run
-the code live</strong> in the R console/script during teaching (the code
-is identical to what’s in the <code>R/</code> scripts, so you can just
-paste from there if needed).</p>
-</div>
-<div id="schedule-as-advertised-on-the-flyer" class="section level2">
-<h2>5. Schedule as advertised on the flyer</h2>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Day</th>
-<th>Date</th>
-<th>Time (WAT)</th>
-<th>Focus</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Day 1</td>
-<td>Saturday, 11 July 2026</td>
-<td>10:00 AM – 12:30 PM</td>
-<td>R basics → import → explore → clean the line list</td>
-</tr>
-<tr class="even">
-<td>Day 2</td>
-<td>Sunday, 12 July 2026</td>
-<td>1:30 PM – 3:30 PM</td>
-<td>Descriptive tables → epidemic curves → outbreak measures →
-wrap-up</td>
-</tr>
-</tbody>
-</table>
-<div id="detailed-day-1-timing-2h-30m" class="section level3">
-<h3>Detailed Day 1 timing (2h 30m)</h3>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Segment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10:00–10:10</td>
-<td>Welcome, housekeeping, who’s in the room</td>
-</tr>
-<tr class="even">
-<td>10:10–10:25</td>
-<td>Part 1: R &amp; RStudio basics, the pipe</td>
-</tr>
-<tr class="odd">
-<td>10:25–10:50</td>
-<td>Part 2: Importing &amp; first exploration (<code>read_csv</code>,
-<code>glimpse</code>, <code>skim</code>) + Exercise 1</td>
-</tr>
-<tr class="even">
-<td>10:50–11:05</td>
-<td>Part 3a: Clean names, duplicates</td>
-</tr>
-<tr class="odd">
-<td>11:05–11:20</td>
-<td>Part 3b: Clean categorical variables + Exercise 2</td>
-</tr>
-<tr class="even">
-<td>11:20–11:35</td>
-<td>Part 3c: Clean numeric variables (age)</td>
-</tr>
-<tr class="odd">
-<td>11:35–12:05</td>
-<td>Part 3d: Clean dates (the hard part) + Exercise 3</td>
-</tr>
-<tr class="even">
-<td>12:05–12:20</td>
-<td>Save clean data, recap</td>
-</tr>
-<tr class="odd">
-<td>12:20–12:30</td>
-<td>Q&amp;A / buffer</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="detailed-day-2-timing-2h-00m" class="section level3">
-<h3>Detailed Day 2 timing (2h 00m)</h3>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Segment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1:30–1:35</td>
-<td>Recap of Day 1, load clean data</td>
-</tr>
-<tr class="even">
-<td>1:35–1:55</td>
-<td>Part 1: Descriptive tables (<code>tabyl</code>) + Exercise 1</td>
-</tr>
-<tr class="odd">
-<td>1:55–2:10</td>
-<td>Part 2a: Basic &amp; weekly epidemic curves</td>
-</tr>
-<tr class="even">
-<td>2:10–2:25</td>
-<td>Part 2b: Faceted epicurves + Exercise 2</td>
-</tr>
-<tr class="odd">
-<td>2:25–2:45</td>
-<td>Part 3a: Attack rate + visualization</td>
-</tr>
-<tr class="even">
-<td>2:45–2:55</td>
-<td>Part 3b: CFR &amp; other indicators + Exercise 3</td>
-</tr>
-<tr class="odd">
-<td>2:55–3:05</td>
-<td>Part 4: Moving average trend</td>
-</tr>
-<tr class="even">
-<td>3:05–3:15</td>
-<td>Part 5: One-page summary + preview of automated reporting</td>
-</tr>
-<tr class="odd">
-<td>3:15–3:25</td>
-<td>Recap, next steps, promo for full program</td>
-</tr>
-<tr class="even">
-<td>3:25–3:30</td>
-<td>Q&amp;A / close</td>
-</tr>
-</tbody>
-</table>
-<p><em>(Note: the course description mentioned “4 hours split into two
-2-hour days” — the timings above follow the flyer’s actual advertised
-times, 10:00–12:30 (2.5h) and 1:30–3:30 (2h). Trim the buffer/Q&amp;A
-slots if you need to hit exactly 2h on Day 1.)</em></p>
-</div>
-</div>
-<div id="teaching-tips" class="section level2">
-<h2>6. Teaching tips</h2>
-<ul>
-<li><strong>Live-code, don’t just click through slides.</strong>
-Trainees retain far more when they see code typed and errors made/fixed
-in real time.</li>
-<li>Pause after every “Hands-on Exercise” slide — give 10–15 minutes,
-then walk through the solution together (solutions are in the
-<code>R/</code> scripts).</li>
-<li>Keep <code>data/awd_linelist_clean.csv</code> (the answer key) ready
-to share with anyone who falls behind during the Day 1 cleaning
-exercises, so they can still fully participate in Day 2.</li>
-<li>End Day 2 with a short live plug for the full training program, as
-per the flyer (“A preview of our upcoming full training program”).</li>
-</ul>
-</div>
-<div id="attribution" class="section level2">
-<h2>7. Attribution</h2>
-<p>Course structure and topic sequencing draws on the chapter
-organization of <em>The Epidemiologist R Handbook</em> (Batra, N. et
-al., 2021), <a href="https://www.epirhandbook.com/en/" class="uri">https://www.epirhandbook.com/en/</a>, licensed CC BY-NC-SA
-4.0. This instructor pack is for non-commercial training use consistent
-with that license. All datasets are synthetic.</p>
 </div>
 </div>
 
