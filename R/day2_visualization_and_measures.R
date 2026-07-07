@@ -1,7 +1,6 @@
 ## =============================================================================
 ## Disease Surveillance and Outbreak Analytics with R
 ## DAY 2 -- Descriptive Analysis, Epidemic Curves & Outbreak Measures
-## Sunday 12 July 2026 | 1:30 - 3:30 WAT
 ## =============================================================================
 ## Continue from the clean line list produced on Day 1.
 ## If you missed Day 1, use data/awd_linelist_clean.csv (answer key) instead.
@@ -71,8 +70,10 @@ linelist <- linelist %>%
 
 ggplot(linelist, aes(x = epiweek, fill = outcome)) +
   geom_bar(colour = "white") +
-  scale_fill_manual(values = c("Recovered" = "seagreen", "Died" = "firebrick"),
-                     na.value = "grey70") +
+  scale_fill_manual(
+    values = c("Recovered" = "seagreen", "Died" = "firebrick"),
+    na.value = "grey70"
+  ) +
   labs(
     title = "Weekly Epidemic Curve by Outcome",
     x = "Week of onset (Monday start)",
@@ -85,7 +86,7 @@ ggplot(linelist, aes(x = epiweek, fill = outcome)) +
 # epicurve faceted by ward - useful to spot where transmission is ongoing
 ggplot(linelist, aes(x = epiweek)) +
   geom_bar(fill = "darkorange") +
-  facet_wrap(~ ward) +
+  facet_wrap(~ward) +
   labs(title = "Weekly Cases by Ward", x = "Week", y = "Cases") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7))
@@ -138,8 +139,10 @@ linelist %>%
 
 daily_cases <- linelist %>%
   count(date_onset, name = "cases") %>%
-  complete(date_onset = seq.Date(min(date_onset), max(date_onset), by = "day"),
-           fill = list(cases = 0)) %>%
+  complete(
+    date_onset = seq.Date(min(date_onset), max(date_onset), by = "day"),
+    fill = list(cases = 0)
+  ) %>%
   arrange(date_onset) %>%
   mutate(moving_avg_7d = zoo::rollmean(cases, k = 7, fill = NA, align = "right"))
 # install.packages("zoo") if not already installed
@@ -157,9 +160,11 @@ ggplot(daily_cases, aes(x = date_onset)) +
 ## 5. A ONE-PAGE SURVEILLANCE SUMMARY (preview of reporting) ------------------
 
 summary_stats <- tibble(
-  Indicator = c("Total cases", "Date range", "Wards affected",
-                "Overall attack rate (per 10,000)", "Case Fatality Ratio (%)",
-                "% Hospitalized", "Median reporting delay (days)"),
+  Indicator = c(
+    "Total cases", "Date range", "Wards affected",
+    "Overall attack rate (per 10,000)", "Case Fatality Ratio (%)",
+    "% Hospitalized", "Median reporting delay (days)"
+  ),
   Value = c(
     nrow(linelist),
     paste(range(linelist$date_onset), collapse = " to "),
@@ -172,13 +177,3 @@ summary_stats <- tibble(
 )
 
 summary_stats
-
-# This table + the epicurve + the attack-rate chart above are exactly what
-# you would paste into a situation report (sitrep) or an R Markdown /
-# Quarto automated report -- which is what our full training program covers.
-
-## -----------------------------------------------------------------------
-## END OF DAY 2 / END OF COURSE
-## You have now: cleaned data, described it, visualised it, and calculated
-## the key outbreak measures used in a real surveillance response.
-## -----------------------------------------------------------------------

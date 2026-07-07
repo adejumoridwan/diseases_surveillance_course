@@ -1,7 +1,7 @@
 ---
 title: "Disease Surveillance & Outbreak Analytics with R"
 subtitle: "Day 1: Importing, Exploring & Cleaning Outbreak Data"
-author: "Your Name | Your Organization"
+author: "Adejumo Ridwan Suleiman | Business Data Laboratory"
 date: "Saturday, 11 July 2026"
 format:
   revealjs:
@@ -18,26 +18,6 @@ execute:
   eval: false
 ---
 
-## Welcome! {background-color="#1f3b57"}
-
-::: {style="color:white;"}
-**Disease Surveillance and Outbreak Analytics with R**
-
-Free launch course — hands-on, practical, beginner-friendly
-
-10:00 AM – 12:30 PM WAT, via Zoom
-:::
-
----
-
-## Housekeeping
-
-- Session is **hands-on** — please have R & RStudio open and ready
-- Slides + code + data: link shared in the chat / follow-up email
-- Ask questions in the chat as we go; we'll pause for Q&A regularly
-- Camera/mic optional; this is a working session
-
----
 
 ## Who is this course for?
 
@@ -84,17 +64,10 @@ throughout the course.
 | **Day 1 (today)** | R basics, import, explore, clean a line list |
 | **Day 2 (tomorrow)** | Descriptive tables, epidemic curves, outbreak measures |
 
-Course content adapted from **The Epidemiologist R Handbook**
-([epirhandbook.com](https://www.epirhandbook.com/en/)) — a free, open
-resource you should bookmark today.
-
 ---
 
 # Part 1: R & RStudio Basics {background-color="#2e5e4e"}
 
-::: {style="color:white;"}
-(10:00 – 10:25)
-:::
 
 ---
 
@@ -182,10 +155,6 @@ library(skimr)      # quick data summaries
 
 # Part 2: Importing & Exploring Data {background-color="#2e5e4e"}
 
-::: {style="color:white;"}
-(10:25 – 10:50) — Epi R Handbook Ch. 7 & 8
-:::
-
 ---
 
 ## Importing your line list
@@ -218,22 +187,11 @@ skim(linelist_raw)       # full summary: missingness, ranges, etc.
 **Habit to build:** never analyze a dataset you haven't looked at first.
 :::
 
----
-
-## 🖥️ Hands-on Exercise 1 (10 min)
-
-1. Import `data/awd_linelist_raw.csv`
-2. Run `glimpse()` and `skim()`
-3. In the chat, tell us: how many rows? Which column has the most
-   missing values?
 
 ---
 
 # Part 3: Cleaning the Line List {background-color="#2e5e4e"}
 
-::: {style="color:white;"}
-(10:50 – 11:55) — Epi R Handbook Ch. 8, 9, 10, 15
-:::
 
 ---
 
@@ -320,19 +278,6 @@ linelist <- linelist %>%
 
 **Pattern:** trim whitespace → standardize case → fix known typos.
 
----
-
-## 🖥️ Hands-on Exercise 2 (15 min)
-
-Using the same pattern, clean:
-
-1. `hospitalized` → should only contain `"Yes"` / `"No"`
-2. `outcome` → should only contain `"Recovered"` / `"Died"` / `NA`
-
-*Hint: use `tabyl()` first to see what you're dealing with, then
-`case_when()`.*
-
-(Solutions in `R/day1_import_and_cleaning.R`)
 
 ---
 
@@ -409,14 +354,6 @@ linelist <- linelist %>%
 
 ---
 
-## 🖥️ Hands-on Exercise 3 (15 min)
-
-1. Apply the date-cleaning code to `date_of_report`
-2. Calculate `reporting_delay` (in days)
-3. Find: what is the **maximum** reporting delay in the dataset?
-   Is that concerning for surveillance timeliness?
-
----
 
 ## Save your cleaned dataset
 
@@ -424,16 +361,16 @@ linelist <- linelist %>%
 write_csv(linelist, "data/awd_linelist_clean_inclass.csv")
 ```
 
-**Bring this file to Day 2!** We'll use it to build epidemic curves
-and calculate outbreak measures.
-
 ---
 
 ## Recap: Day 1
 
 ✅ R & RStudio basics, the pipe
+
 ✅ Importing and first-look exploration
+
 ✅ Cleaning: column names, duplicates, categories, numbers, dates
+
 ✅ A clean, analysis-ready line list
 
 **Tomorrow:** turn this clean data into epidemic curves, tables, and
@@ -445,6 +382,4 @@ outbreak measures (attack rate, CFR).
 
 ::: {style="color:white;"}
 See you tomorrow!
-
-Sunday, 12 July 2026, 1:30 – 3:30 PM WAT
 :::

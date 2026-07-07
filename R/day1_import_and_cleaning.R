@@ -1,26 +1,22 @@
 ## =============================================================================
 ## Disease Surveillance and Outbreak Analytics with R
 ## DAY 1 -- Importing, Exploring & Cleaning an Outbreak Line List
-## Saturday 11 July 2026 | 10:00 - 12:30 WAT
 ## =============================================================================
 ## Scenario: A suspected Acute Watery Diarrhoea (AWD) outbreak has been
 ## reported in Ogun North LGA. You have received a raw line list exported
-## from the field data collection tool. Your job: get it analysis-ready.
+## from the field data collection tool.
 ## =============================================================================
 
 
 ## 0. SETUP -------------------------------------------------------------------
 
-# Install packages (run once - uncomment if needed)
+# Install packages
 # install.packages(c("tidyverse", "janitor", "lubridate", "here", "epikit", "skimr"))
 
-library(tidyverse)   # dplyr, ggplot2, stringr, tidyr, readr, etc.
-library(janitor)     # clean_names(), tabyl(), get_dupes()
-library(lubridate)   # working with dates
-library(skimr)       # quick data overview
-
-# set your working directory to the course folder, or use an RStudio Project
-# setwd("path/to/course_folder")
+library(tidyverse) # dplyr, ggplot2, stringr, tidyr, readr, etc.
+library(janitor) # clean_names(), tabyl(), get_dupes()
+library(lubridate) # working with dates
+library(skimr) # quick data overview
 
 
 ## 1. IMPORT THE DATA -----------------------------------------------------
@@ -47,8 +43,8 @@ names(linelist)
 ## 3. INSPECT AND REMOVE DUPLICATES ---------------------------------------
 
 # a) exact duplicate rows
-get_dupes(linelist)                       # view them
-linelist <- linelist %>% distinct()       # drop exact duplicates
+get_dupes(linelist) # view them
+linelist <- linelist %>% distinct() # drop exact duplicates
 
 # b) near-duplicate case_ids (e.g. "AWD-0043" and "AWD-0043b")
 linelist %>%
@@ -64,58 +60,69 @@ linelist <- linelist %>%
   rename(case_id = case_id_clean) %>%
   relocate(case_id)
 
-nrow(linelist)   # should now be close to the true number of cases
+nrow(linelist) # should now be close to the true number of cases
 
 
 ## 4. CLEAN TEXT / CATEGORICAL VARIABLES ----------------------------------
 
 # a) Sex: standardise casing and abbreviations
 linelist <- linelist %>%
-  mutate(sex = str_trim(sex),
-         sex = case_when(
-           str_to_upper(sex) %in% c("M", "MALE")   ~ "Male",
-           str_to_upper(sex) %in% c("F", "FEMALE") ~ "Female",
-           TRUE ~ NA_character_
-         ))
+  mutate(
+    sex = str_trim(sex),
+    sex = case_when(
+      str_to_upper(sex) %in% c("M", "MALE") ~ "Male",
+      str_to_upper(sex) %in% c("F", "FEMALE") ~ "Female",
+      TRUE ~ NA_character_
+    )
+  )
 
 tabyl(linelist, sex)
 
 # b) Ward: trim whitespace, standardise case, fix known typos
 linelist <- linelist %>%
-  mutate(ward = str_trim(ward),
-         ward = str_to_title(ward),
-         ward = recode(ward,
-                        "Iwo Rd"  = "Iwo Road",
-                        "Ring Rd" = "Ring Road"))
+  mutate(
+    ward = str_trim(ward),
+    ward = str_to_title(ward),
+    ward = recode(ward,
+      "Iwo Rd"  = "Iwo Road",
+      "Ring Rd" = "Ring Road"
+    )
+  )
 
 tabyl(linelist, ward)
 
 # c) Hospitalized: standardise Yes/No coding
 linelist <- linelist %>%
-  mutate(hospitalized = str_trim(str_to_lower(hospitalized)),
-         hospitalized = case_when(
-           hospitalized %in% c("yes", "y", "1") ~ "Yes",
-           hospitalized %in% c("no", "n", "0")  ~ "No",
-           TRUE ~ NA_character_
-         ))
+  mutate(
+    hospitalized = str_trim(str_to_lower(hospitalized)),
+    hospitalized = case_when(
+      hospitalized %in% c("yes", "y", "1") ~ "Yes",
+      hospitalized %in% c("no", "n", "0") ~ "No",
+      TRUE ~ NA_character_
+    )
+  )
 
 tabyl(linelist, hospitalized)
 
 # d) Outcome: standardise and collapse categories
 linelist <- linelist %>%
-  mutate(outcome = str_trim(str_to_lower(outcome)),
-         outcome = case_when(
-           outcome %in% c("recovered", "alive") ~ "Recovered",
-           outcome == "died"                    ~ "Died",
-           TRUE ~ NA_character_       # blank / "unknown" / "unk" -> NA
-         ))
+  mutate(
+    outcome = str_trim(str_to_lower(outcome)),
+    outcome = case_when(
+      outcome %in% c("recovered", "alive") ~ "Recovered",
+      outcome == "died" ~ "Died",
+      TRUE ~ NA_character_ # blank / "unknown" / "unk" -> NA
+    )
+  )
 
 tabyl(linelist, outcome)
 
 # e) RDT result and source of water: simple case standardisation
 linelist <- linelist %>%
-  mutate(rdt_result   = str_to_title(str_trim(rdt_result)),
-         source_of_water = str_to_title(str_trim(source_of_water)))
+  mutate(
+    rdt_result = str_to_title(str_trim(rdt_result)),
+    source_of_water = str_to_title(str_trim(source_of_water))
+  )
 
 tabyl(linelist, rdt_result)
 tabyl(linelist, source_of_water)
@@ -150,15 +157,19 @@ tabyl(linelist, age_group)
 linelist <- linelist %>%
   mutate(
     date_onset = parse_date_time(
-      date_onset, orders = c("ymd", "dmy", "mdy"), quiet = TRUE
+      date_onset,
+      orders = c("ymd", "dmy", "mdy"), quiet = TRUE
     ) %>% as_date(),
     date_of_report = parse_date_time(
-      date_of_report, orders = c("ymd", "dmy", "mdy"), quiet = TRUE
+      date_of_report,
+      orders = c("ymd", "dmy", "mdy"), quiet = TRUE
     ) %>% as_date()
   )
 
 # check for dates that failed to parse, or are impossible
-linelist %>% filter(is.na(date_onset)) %>% select(case_id, date_onset)
+linelist %>%
+  filter(is.na(date_onset)) %>%
+  select(case_id, date_onset)
 
 linelist %>%
   filter(date_onset < as_date("2026-01-01") | date_onset > as_date("2026-07-04")) %>%
@@ -167,12 +178,17 @@ linelist %>%
 # for the course: drop rows with an impossible/missing onset date, and
 # fix the reporting date if it is earlier than onset (data entry error)
 linelist <- linelist %>%
-  filter(!is.na(date_onset),
-         date_onset >= as_date("2026-01-01"),
-         date_onset <= as_date("2026-07-04")) %>%
-  mutate(date_of_report = if_else(date_of_report < date_onset | is.na(date_of_report),
-                                   date_onset, date_of_report),
-         reporting_delay = as.numeric(date_of_report - date_onset))
+  filter(
+    !is.na(date_onset),
+    date_onset >= as_date("2026-01-01"),
+    date_onset <= as_date("2026-07-04")
+  ) %>%
+  mutate(
+    date_of_report = if_else(date_of_report < date_onset | is.na(date_of_report),
+      date_onset, date_of_report
+    ),
+    reporting_delay = as.numeric(date_of_report - date_onset)
+  )
 
 summary(linelist$reporting_delay)
 

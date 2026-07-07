@@ -1,7 +1,7 @@
 ---
 title: "Disease Surveillance & Outbreak Analytics with R"
 subtitle: "Day 2: Epidemic Curves, Tables & Outbreak Measures"
-author: "Your Name | Your Organization"
+author: "Adejumo Ridwan Suleiman | Business Data Laboratory"
 date: "Sunday, 12 July 2026"
 format:
   revealjs:
@@ -16,15 +16,6 @@ execute:
   eval: false
 ---
 
-## Welcome back! {background-color="#1f3b57"}
-
-::: {style="color:white;"}
-**Day 2: From clean data to outbreak insights**
-
-1:30 – 3:30 PM WAT
-:::
-
----
 
 ## Quick recap of Day 1
 
@@ -57,17 +48,13 @@ library(lubridate)
 linelist <- read_csv("data/awd_linelist_clean_inclass.csv")
 population <- read_csv("data/ward_population.csv")
 
-# didn't finish Day 1? use the answer key instead:
+# didn't finish Day 1? use the following data instead:
 # linelist <- read_csv("data/awd_linelist_clean.csv")
 ```
 
 ---
 
 # Part 1: Descriptive Tables {background-color="#2e5e4e"}
-
-::: {style="color:white;"}
-(1:30 – 1:55) — Epi R Handbook Ch. 17
-:::
 
 ---
 
@@ -102,21 +89,8 @@ Answers: *"What proportion of each age group is male vs female?"*
 
 ---
 
-## 🖥️ Hands-on Exercise 1 (10 min)
-
-1. Produce a table of `outcome` by `hospitalized`
-2. In the chat: which group has a higher proportion of deaths —
-   hospitalized or not?
-
----
-
 # Part 2: Epidemic Curves {background-color="#2e5e4e"}
 
-::: {style="color:white;"}
-(1:55 – 2:30) — Epi R Handbook Ch. 32
-:::
-
----
 
 ## Why the epicurve matters
 
@@ -139,7 +113,6 @@ ggplot(linelist, aes(x = date_onset)) +
   theme_minimal()
 ```
 
-*Live demo — build this together*
 
 ---
 
@@ -175,19 +148,7 @@ useful for targeting a response.
 
 ---
 
-## 🖥️ Hands-on Exercise 2 (15 min)
-
-1. Build the weekly epicurve by outcome
-2. Change the fill colours to your own choice
-3. Facet it by `sex` instead of `ward` — what do you notice?
-
----
-
 # Part 3: Key Outbreak Measures {background-color="#2e5e4e"}
-
-::: {style="color:white;"}
-(2:30 – 3:00) — core outbreak epidemiology
-:::
 
 ---
 
@@ -269,13 +230,6 @@ system can't respond to a fast outbreak.
 
 ---
 
-## 🖥️ Hands-on Exercise 3 (10 min)
-
-1. Calculate the **overall** attack rate for the whole LGA
-   (hint: sum all cases, sum all ward populations)
-2. Compare it to the highest single-ward attack rate
-
----
 
 ## A simple trend: 7-day moving average
 
@@ -297,10 +251,6 @@ Smooths day-to-day noise so you can see the underlying trend.
 ---
 
 # Part 4: Putting It Together {background-color="#2e5e4e"}
-
-::: {style="color:white;"}
-(3:00 – 3:20)
-:::
 
 ---
 
@@ -331,21 +281,10 @@ regenerate themselves every time new data arrives.
 
 ---
 
-## Where to go next
-
-- Explore **The Epidemiologist R Handbook**: [epirhandbook.com](https://www.epirhandbook.com/en/)
-  - Ch. 8–15: Data management & cleaning
-  - Ch. 17–23: Analysis (tables, regression, time series)
-  - Ch. 30–39: Visualization
-  - Ch. 40–43: Automated reports & dashboards
-- Practice with **your own** surveillance/line-list data
-- Join our **upcoming full training program** (details to follow)
-
----
-
 ## Recap: What we covered
 
 ✅ Day 1: Import, explore, clean a messy line list
+
 ✅ Day 2: Descriptive tables, epidemic curves, outbreak measures,
 a simple trend, and a summary output
 

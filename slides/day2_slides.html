@@ -9,7 +9,7 @@
 <link href="day2_slides_files/libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Your Name | Your Organization">
+  <meta name="author" content="Adejumo Ridwan Suleiman | Business Data Laboratory">
   <meta name="dcterms.date" content="2026-07-12">
   <title>Disease Surveillance &amp; Outbreak Analytics with R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,19 +203,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Your Name | Your Organization 
+Adejumo Ridwan Suleiman | Business Data Laboratory 
 </div>
 </div>
 </div>
 
   <p class="date">2026-07-12</p>
-</section>
-<section id="welcome-back" class="slide level2" data-background-color="#1f3b57">
-<h2>Welcome back!</h2>
-<div style="color:white;">
-<p><strong>Day 2: From clean data to outbreak insights</strong></p>
-<p>1:30 – 3:30 PM WAT</p>
-</div>
 </section>
 <section id="quick-recap-of-day-1" class="slide level2">
 <h2>Quick recap of Day 1</h2>
@@ -246,7 +239,7 @@ Your Name | Your Organization
 <span id="cb1-5"><a href=""></a>linelist <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/awd_linelist_clean_inclass.csv"</span>)</span>
 <span id="cb1-6"><a href=""></a>population <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ward_population.csv"</span>)</span>
 <span id="cb1-7"><a href=""></a></span>
-<span id="cb1-8"><a href=""></a><span class="co"># didn't finish Day 1? use the answer key instead:</span></span>
+<span id="cb1-8"><a href=""></a><span class="co"># didn't finish Day 1? use the following data instead:</span></span>
 <span id="cb1-9"><a href=""></a><span class="co"># linelist &lt;- read_csv("data/awd_linelist_clean.csv")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -256,9 +249,7 @@ Your Name | Your Organization
 <section>
 <section id="part-1-descriptive-tables" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 1: Descriptive Tables</h1>
-<div style="color:white;">
-<p>(1:30 – 1:55) — Epi R Handbook Ch. 17</p>
-</div>
+
 </section>
 <section id="tabyl-quick-frequency-tables" class="slide level2">
 <h2><code>tabyl()</code> — quick frequency tables</h2>
@@ -284,22 +275,13 @@ Your Name | Your Organization
 </div>
 <p>Answers: <em>“What proportion of each age group is male vs female?”</em></p>
 </section>
-<section id="hands-on-exercise-1-10-min" class="slide level2">
-<h2>🖥️ Hands-on Exercise 1 (10 min)</h2>
-<ol type="1">
-<li>Produce a table of <code>outcome</code> by <code>hospitalized</code></li>
-<li>In the chat: which group has a higher proportion of deaths — hospitalized or not?</li>
-</ol>
-</section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="part-2-epidemic-curves" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 2: Epidemic Curves</h1>
-<div style="color:white;">
-<p>(1:55 – 2:30) — Epi R Handbook Ch. 32</p>
-</div>
+
 </section>
 <section id="why-the-epicurve-matters" class="slide level2">
 <h2>Why the epicurve matters</h2>
@@ -319,7 +301,6 @@ Your Name | Your Organization
 <span id="cb5-4"><a href=""></a>       <span class="at">x =</span> <span class="st">"Date of onset"</span>, <span class="at">y =</span> <span class="st">"Number of cases"</span>) <span class="sc">+</span></span>
 <span id="cb5-5"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><em>Live demo — build this together</em></p>
 </section>
 <section id="a-weekly-epicurve-by-outcome" class="slide level2">
 <h2>A weekly epicurve, by outcome</h2>
@@ -347,23 +328,13 @@ Your Name | Your Organization
 </div>
 <p>Facets let you spot <strong>where transmission is still active</strong> — very useful for targeting a response.</p>
 </section>
-<section id="hands-on-exercise-2-15-min" class="slide level2">
-<h2>🖥️ Hands-on Exercise 2 (15 min)</h2>
-<ol type="1">
-<li>Build the weekly epicurve by outcome</li>
-<li>Change the fill colours to your own choice</li>
-<li>Facet it by <code>sex</code> instead of <code>ward</code> — what do you notice?</li>
-</ol>
-</section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="part-3-key-outbreak-measures" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 3: Key Outbreak Measures</h1>
-<div style="color:white;">
-<p>(2:30 – 3:00) — core outbreak epidemiology</p>
-</div>
+
 </section>
 <section id="attack-rate" class="slide level2">
 <h2>Attack Rate</h2>
@@ -438,13 +409,6 @@ Your Name | Your Organization
 </div>
 <p>Timeliness indicators matter as much as clinical ones — a slow system can’t respond to a fast outbreak.</p>
 </section>
-<section id="hands-on-exercise-3-10-min" class="slide level2">
-<h2>🖥️ Hands-on Exercise 3 (10 min)</h2>
-<ol type="1">
-<li>Calculate the <strong>overall</strong> attack rate for the whole LGA (hint: sum all cases, sum all ward populations)</li>
-<li>Compare it to the highest single-ward attack rate</li>
-</ol>
-</section>
 <section id="a-simple-trend-7-day-moving-average" class="slide level2">
 <h2>A simple trend: 7-day moving average</h2>
 <div class="cell">
@@ -467,9 +431,7 @@ Your Name | Your Organization
 <section>
 <section id="part-4-putting-it-together" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 4: Putting It Together</h1>
-<div style="color:white;">
-<p>(3:00 – 3:20)</p>
-</div>
+
 </section>
 <section id="a-one-page-surveillance-summary" class="slide level2">
 <h2>A one-page surveillance summary</h2>
@@ -489,23 +451,10 @@ Your Name | Your Organization
 <p>What we did manually today (import → clean → analyze → visualize) can be <strong>automated</strong> with R Markdown / Quarto reports that regenerate themselves every time new data arrives.</p>
 <p><em>(Covered in depth in our full training program.)</em></p>
 </section>
-<section id="where-to-go-next" class="slide level2">
-<h2>Where to go next</h2>
-<ul>
-<li>Explore <strong>The Epidemiologist R Handbook</strong>: <a href="https://www.epirhandbook.com/en/">epirhandbook.com</a>
-<ul>
-<li>Ch. 8–15: Data management &amp; cleaning</li>
-<li>Ch. 17–23: Analysis (tables, regression, time series)</li>
-<li>Ch. 30–39: Visualization</li>
-<li>Ch. 40–43: Automated reports &amp; dashboards</li>
-</ul></li>
-<li>Practice with <strong>your own</strong> surveillance/line-list data</li>
-<li>Join our <strong>upcoming full training program</strong> (details to follow)</li>
-</ul>
-</section>
 <section id="recap-what-we-covered" class="slide level2">
 <h2>Recap: What we covered</h2>
-<p>✅ Day 1: Import, explore, clean a messy line list ✅ Day 2: Descriptive tables, epidemic curves, outbreak measures, a simple trend, and a summary output</p>
+<p>✅ Day 1: Import, explore, clean a messy line list</p>
+<p>✅ Day 2: Descriptive tables, epidemic curves, outbreak measures, a simple trend, and a summary output</p>
 <p><strong>You now have a repeatable workflow you can apply to real surveillance data in your own work.</strong></p>
 </section>
 <section id="thank-you" class="slide level2" data-background-color="#1f3b57">

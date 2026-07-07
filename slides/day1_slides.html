@@ -9,7 +9,7 @@
 <link href="day1_slides_files/libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Your Name | Your Organization">
+  <meta name="author" content="Adejumo Ridwan Suleiman | Business Data Laboratory">
   <meta name="dcterms.date" content="2026-07-11">
   <title>Disease Surveillance &amp; Outbreak Analytics with R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -203,29 +203,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Your Name | Your Organization 
+Adejumo Ridwan Suleiman | Business Data Laboratory 
 </div>
 </div>
 </div>
 
   <p class="date">2026-07-11</p>
-</section>
-<section id="welcome" class="slide level2" data-background-color="#1f3b57">
-<h2>Welcome!</h2>
-<div style="color:white;">
-<p><strong>Disease Surveillance and Outbreak Analytics with R</strong></p>
-<p>Free launch course — hands-on, practical, beginner-friendly</p>
-<p>10:00 AM – 12:30 PM WAT, via Zoom</p>
-</div>
-</section>
-<section id="housekeeping" class="slide level2">
-<h2>Housekeeping</h2>
-<ul>
-<li>Session is <strong>hands-on</strong> — please have R &amp; RStudio open and ready</li>
-<li>Slides + code + data: link shared in the chat / follow-up email</li>
-<li>Ask questions in the chat as we go; we’ll pause for Q&amp;A regularly</li>
-<li>Camera/mic optional; this is a working session</li>
-</ul>
 </section>
 <section id="who-is-this-course-for" class="slide level2">
 <h2>Who is this course for?</h2>
@@ -285,7 +268,6 @@ Your Name | Your Organization
 </tr>
 </tbody>
 </table>
-<p>Course content adapted from <strong>The Epidemiologist R Handbook</strong> (<a href="https://www.epirhandbook.com/en/">epirhandbook.com</a>) — a free, open resource you should bookmark today.</p>
 </section>
 <section class="slide level2">
 
@@ -293,9 +275,7 @@ Your Name | Your Organization
 <section>
 <section id="part-1-r-rstudio-basics" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 1: R &amp; RStudio Basics</h1>
-<div style="color:white;">
-<p>(10:00 – 10:25)</p>
-</div>
+
 </section>
 <section id="what-is-r-what-is-rstudio" class="slide level2">
 <h2>What is R? What is RStudio?</h2>
@@ -369,9 +349,7 @@ Your Name | Your Organization
 <section>
 <section id="part-2-importing-exploring-data" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 2: Importing &amp; Exploring Data</h1>
-<div style="color:white;">
-<p>(10:25 – 10:50) — Epi R Handbook Ch. 7 &amp; 8</p>
-</div>
+
 </section>
 <section id="importing-your-line-list" class="slide level2">
 <h2>Importing your line list</h2>
@@ -407,23 +385,13 @@ Your Name | Your Organization
 </div>
 </div>
 </section>
-<section id="hands-on-exercise-1-10-min" class="slide level2">
-<h2>🖥️ Hands-on Exercise 1 (10 min)</h2>
-<ol type="1">
-<li>Import <code>data/awd_linelist_raw.csv</code></li>
-<li>Run <code>glimpse()</code> and <code>skim()</code></li>
-<li>In the chat, tell us: how many rows? Which column has the most missing values?</li>
-</ol>
-</section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="part-3-cleaning-the-line-list" class="title-slide slide level1 center" data-background-color="#2e5e4e">
 <h1>Part 3: Cleaning the Line List</h1>
-<div style="color:white;">
-<p>(10:50 – 11:55) — Epi R Handbook Ch. 8, 9, 10, 15</p>
-</div>
+
 </section>
 <section id="why-real-surveillance-data-is-messy" class="slide level2">
 <h2>Why real surveillance data is messy</h2>
@@ -493,16 +461,6 @@ Your Name | Your Organization
 </div>
 <p><strong>Pattern:</strong> trim whitespace → standardize case → fix known typos.</p>
 </section>
-<section id="hands-on-exercise-2-15-min" class="slide level2">
-<h2>🖥️ Hands-on Exercise 2 (15 min)</h2>
-<p>Using the same pattern, clean:</p>
-<ol type="1">
-<li><code>hospitalized</code> → should only contain <code>"Yes"</code> / <code>"No"</code></li>
-<li><code>outcome</code> → should only contain <code>"Recovered"</code> / <code>"Died"</code> / <code>NA</code></li>
-</ol>
-<p><em>Hint: use <code>tabyl()</code> first to see what you’re dealing with, then <code>case_when()</code>.</em></p>
-<p>(Solutions in <code>R/day1_import_and_cleaning.R</code>)</p>
-</section>
 <section id="step-4-clean-numeric-variables-age" class="slide level2">
 <h2>Step 4: Clean numeric variables (age)</h2>
 <div class="cell">
@@ -565,31 +523,24 @@ Your Name | Your Organization
 <span id="cb20-10"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="hands-on-exercise-3-15-min" class="slide level2">
-<h2>🖥️ Hands-on Exercise 3 (15 min)</h2>
-<ol type="1">
-<li>Apply the date-cleaning code to <code>date_of_report</code></li>
-<li>Calculate <code>reporting_delay</code> (in days)</li>
-<li>Find: what is the <strong>maximum</strong> reporting delay in the dataset? Is that concerning for surveillance timeliness?</li>
-</ol>
-</section>
 <section id="save-your-cleaned-dataset" class="slide level2">
 <h2>Save your cleaned dataset</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">write_csv</span>(linelist, <span class="st">"data/awd_linelist_clean_inclass.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Bring this file to Day 2!</strong> We’ll use it to build epidemic curves and calculate outbreak measures.</p>
 </section>
 <section id="recap-day-1" class="slide level2">
 <h2>Recap: Day 1</h2>
-<p>✅ R &amp; RStudio basics, the pipe ✅ Importing and first-look exploration ✅ Cleaning: column names, duplicates, categories, numbers, dates ✅ A clean, analysis-ready line list</p>
+<p>✅ R &amp; RStudio basics, the pipe</p>
+<p>✅ Importing and first-look exploration</p>
+<p>✅ Cleaning: column names, duplicates, categories, numbers, dates</p>
+<p>✅ A clean, analysis-ready line list</p>
 <p><strong>Tomorrow:</strong> turn this clean data into epidemic curves, tables, and outbreak measures (attack rate, CFR).</p>
 </section>
 <section id="questions" class="slide level2" data-background-color="#1f3b57">
 <h2>Questions?</h2>
 <div style="color:white;">
 <p>See you tomorrow!</p>
-<p>Sunday, 12 July 2026, 1:30 – 3:30 PM WAT</p>
 </div>
 
 </section></section>
