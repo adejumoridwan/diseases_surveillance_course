@@ -25,8 +25,7 @@ A simulated outbreak of **Acute Watery Diarrhoea (AWD)** in a fictional
 2026) across 6 wards (Iwo Road, Bodija, Sango, Apata, Agodi, Ring Road).
 337 true cases, deliberately "dirtied" into 353 messy rows for the
 cleaning exercise (duplicates, typos, mixed date formats, impossible
-ages, inconsistent Yes/No and category coding). This mirrors the kinds
-of problems trainees will meet in real line-list data.
+ages, inconsistent Yes/No and category coding). 
 
 
 ## 3. Setup instructions 
