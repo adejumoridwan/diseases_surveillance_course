@@ -17,6 +17,7 @@ library(tidyverse) # dplyr, ggplot2, stringr, tidyr, readr, etc.
 library(janitor) # clean_names(), tabyl(), get_dupes()
 library(lubridate) # working with dates
 library(skimr) # quick data overview
+library(pacman)
 
 
 ## 1. IMPORT THE DATA -----------------------------------------------------
@@ -35,6 +36,7 @@ skim(linelist_raw)
 linelist <- linelist_raw %>%
   clean_names()
 
+
 names(linelist)
 # case_id, name, age, sex, ward, date_onset, date_of_report,
 # hospitalized, rdt_result, outcome, source_of_water
@@ -50,6 +52,7 @@ linelist <- linelist %>% distinct() # drop exact duplicates
 linelist %>%
   count(case_id) %>%
   filter(n > 1)
+
 
 # For the course: strip any trailing letter appended to case_id, then
 # keep only the first occurrence of each true case_id
@@ -70,11 +73,12 @@ linelist <- linelist %>%
   mutate(
     sex = str_trim(sex),
     sex = case_when(
-      str_to_upper(sex) %in% c("M", "MALE") ~ "Male",
+      str_to_upper(sex) %in% c("M", "MALE", "MLE") ~ "Male",
       str_to_upper(sex) %in% c("F", "FEMALE") ~ "Female",
       TRUE ~ NA_character_
     )
   )
+
 
 tabyl(linelist, sex)
 
@@ -89,18 +93,22 @@ linelist <- linelist %>%
     )
   )
 
+
 tabyl(linelist, ward)
 
 # c) Hospitalized: standardise Yes/No coding
 linelist <- linelist %>%
   mutate(
-    hospitalized = str_trim(str_to_lower(hospitalized)),
+    hospitalized = str_to_lower(hospitalized),
+    hospitalized = str_trim(hospitalized),
     hospitalized = case_when(
       hospitalized %in% c("yes", "y", "1") ~ "Yes",
       hospitalized %in% c("no", "n", "0") ~ "No",
       TRUE ~ NA_character_
     )
   )
+
+
 
 tabyl(linelist, hospitalized)
 
@@ -147,6 +155,15 @@ linelist <- linelist %>%
     right = FALSE
   ))
 
+# create age groups for later analysis
+linelist <- linelist %>%
+  mutate(age_group_2 = cut(
+    age,
+    breaks = c(0, 5, 15, 30, 45, 60, 65, 70, 75, 80, Inf),
+    labels = c("0-4", "5-14", "15-29", "30-44", "45-59", "60-64", "65-69", "70-74", "75-79", "80+"),
+    right = FALSE
+  ))
+
 tabyl(linelist, age_group)
 
 
@@ -171,6 +188,7 @@ linelist %>%
   filter(is.na(date_onset)) %>%
   select(case_id, date_onset)
 
+
 linelist %>%
   filter(date_onset < as_date("2026-01-01") | date_onset > as_date("2026-07-04")) %>%
   select(case_id, date_onset, date_of_report)
@@ -191,6 +209,8 @@ linelist <- linelist %>%
   )
 
 summary(linelist$reporting_delay)
+
+
 
 
 ## 7. FINAL CHECK AND EXPORT ------------------------------------------------

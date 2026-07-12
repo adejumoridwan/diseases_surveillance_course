@@ -31,11 +31,13 @@ range(linelist$date_onset)
 
 # case counts by sex
 tabyl(linelist, sex) %>%
-  adorn_pct_formatting(digits = 1)
+  adorn_pct_formatting(digits = 2)
+
 
 # case counts by ward
 tabyl(linelist, ward) %>%
   arrange(desc(n))
+
 
 # cross-tabulation: age group x sex
 linelist %>%
@@ -44,6 +46,8 @@ linelist %>%
   adorn_percentages("row") %>%
   adorn_pct_formatting(digits = 1) %>%
   adorn_ns()
+
+
 
 # outcome by hospitalization status
 linelist %>%
@@ -64,6 +68,8 @@ ggplot(linelist, aes(x = date_onset)) +
   ) +
   theme_minimal()
 
+
+
 # weekly epicurve, coloured by outcome (more useful for surveillance meetings)
 linelist <- linelist %>%
   mutate(epiweek = floor_date(date_onset, unit = "week", week_start = 1))
@@ -81,7 +87,9 @@ ggplot(linelist, aes(x = epiweek, fill = outcome)) +
     fill = "Outcome"
   ) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%W")
+
 
 # epicurve faceted by ward - useful to spot where transmission is ongoing
 ggplot(linelist, aes(x = epiweek)) +
@@ -89,7 +97,8 @@ ggplot(linelist, aes(x = epiweek)) +
   facet_wrap(~ward) +
   labs(title = "Weekly Cases by Ward", x = "Week", y = "Cases") +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7)) +
+  scale_x_date(date_breaks = "1 month")
 
 
 ## 3. KEY OUTBREAK MEASURES ----------------------------------------------------
@@ -102,6 +111,11 @@ attack_rate <- cases_by_ward %>%
   left_join(population, by = "ward") %>%
   mutate(attack_rate_per_10000 = round(cases / population * 10000, 1)) %>%
   arrange(desc(attack_rate_per_10000))
+
+cases_by_ward %>%
+  left_join(population, by = "ward") %>%
+  mutate(attack_rate_per_1000 = (cases / population) * 1000)
+
 
 attack_rate
 
